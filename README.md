@@ -1,4 +1,4 @@
-# Hyperreal Folio
+# Spotify themed Pavan Surya Portfolio
 
 A fast, modern portfolio site showcasing my work. Built from scratch with Vite, React, TypeScript, shadcn/ui, and Tailwind CSS.
 

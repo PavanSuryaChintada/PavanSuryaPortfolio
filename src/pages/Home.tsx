@@ -10,16 +10,16 @@ import { useColorExtractor } from '@/hooks/use-color-extractor';
 const Home: React.FC = () => {
   const { selectedProfile } = useAppContext();
   const navigate = useNavigate();
-  const { gradientColor, extractColor, clearColor } = useColorExtractor();
+  const { gradientColor, extractColor, clearColor, setColor } = useColorExtractor();
   const [activeFilter, setActiveFilter] = useState('Professional');
 
   const allPlaylists = [
-    { title: 'Education', subtitle: 'Academic background', imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=300&h=300&fit=crop', category: 'professional', link: '/education' },
-    { title: 'Languages', subtitle: 'Communication skills', imageUrl: 'https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?w=300&h=300&fit=crop', category: 'professional', link: '/languages' },
-    { title: 'Honors & Awards', subtitle: 'Achievements', imageUrl: 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=300&h=300&fit=crop', category: 'professional', link: '/awards' },
-    { title: 'Volunteering', subtitle: 'Community service', imageUrl: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=300&h=300&fit=crop', category: 'professional', link: '/professional' },
-    { title: 'Music', subtitle: 'Personal interests', imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=300&h=300&fit=crop', category: 'personal', link: '/' },
-    { title: 'Art', subtitle: 'Creative pursuits', imageUrl: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=300&h=300&fit=crop', category: 'personal', link: '/' },
+    { title: 'Education', subtitle: 'Academic background', imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=300&h=300&fit=crop', category: 'professional', link: '/education', colorHsl: '141 50% 20%' }, // Spotify Green
+    { title: 'Languages', subtitle: 'Communication skills', imageUrl: 'https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?w=300&h=300&fit=crop', category: 'professional', link: '/languages', colorHsl: '205 30% 18%' }, // Teal/Blue
+    { title: 'Honors & Awards', subtitle: 'Achievements', imageUrl: 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=300&h=300&fit=crop', category: 'professional', link: '/awards', colorHsl: '40 45% 25%' }, // Gold
+    { title: 'Volunteering', subtitle: 'Community service', imageUrl: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=300&h=300&fit=crop', category: 'professional', link: '/professional', colorHsl: '260 25% 15%' }, // Purple
+    { title: 'Music', subtitle: 'Personal interests', imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=300&h=300&fit=crop', category: 'personal', link: '/', colorHsl: '180 25% 20%' }, // Pink
+    { title: 'Art', subtitle: 'Creative pursuits', imageUrl: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=300&h=300&fit=crop', category: 'personal', link: '/', colorHsl: '15 30% 22%' }, // Orange
   ];
 
   const filteredPlaylists = activeFilter === 'All' 
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
 
   const madeForYouItems = [
     { title: 'Work Permit', subtitle: 'Visa & Authorization', imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=400&fit=crop', link: '/' },
-    { title: 'Skills', subtitle: 'Technical expertise', imageUrl: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=400&fit=crop', link: '/skills-details' },
+    { title: 'Skills', subtitle: 'Technical expertise', imageUrl: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=400&fit=crop', link: '/skills' },
     { title: 'Experience', subtitle: 'Work history', imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop', link: '/work-experience' },
     { title: 'Certifications', subtitle: 'Credentials', imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=400&fit=crop', link: '/certifications' },
     { title: 'Recommendations', subtitle: 'Testimonials', imageUrl: 'https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=400&h=400&fit=crop', link: '/' },
@@ -77,7 +77,8 @@ const Home: React.FC = () => {
                   title={playlist.title}
                   subtitle={playlist.subtitle}
                   imageUrl={playlist.imageUrl}
-                  onHover={extractColor}
+                  hoverColorHsl={playlist.colorHsl}
+                  onHover={() => setColor(playlist.colorHsl)}
                   onLeave={clearColor}
                 />
               </div>

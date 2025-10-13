@@ -13,7 +13,6 @@ import Languages from "./pages/Languages";
 import Awards from "./pages/Awards";
 import WorkExperience from "./pages/WorkExperience";
 import Certifications from "./pages/Certifications";
-import SkillsDetails from "./pages/SkillsDetails";
 
 const queryClient = new QueryClient();
 
@@ -38,7 +37,6 @@ const App = () => (
             <Route path="/awards" element={<Awards />} />
             <Route path="/work-experience" element={<WorkExperience />} />
             <Route path="/certifications" element={<Certifications />} />
-            <Route path="/skills-details" element={<SkillsDetails />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

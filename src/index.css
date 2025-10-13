@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Official Spotify Dark Theme Colors - Exact Brand Values */
+    --bg-base: 0 0% 7.06%;        /* #121212 - Primary background */
+    --bg-elevated: 0 0% 9.41%;    /* #181818 - UI panels & cards */
+    --bg-sidebar: 0 0% 9.41%;     /* #181818 - Sidebar */
+    --bg-card: 0 0% 9.41%;        /* #181818 - Cards */
+    --bg-card-hover: 0 0% 15%;    /* #262626 - Card hover */
+    --bg-highlight: 0 0% 18%;     /* #2e2e2e - Highlight/Press */
+    
+    /* Text Colors */
+    --text-base: 0 0% 100%;       /* #FFFFFF - Primary text & active icons */
+    --text-subdued: 0 0% 70.2%;   /* #B3B3B3 - Secondary text & inactive icons */
+    --text-muted: 0 0% 54%;       /* #8a8a8a - Tertiary text */
+    
+    /* Spotify Brand - Exact Green */
+    --spotify-green: 141 73% 42%; /* #1DB954 - Accent/Interactive */
+    --spotify-green-hover: 141 73% 38%; /* Darker green on hover */
+    
+    /* UI Elements */
+    --border-base: 0 0% 18%;      /* #2e2e2e - Borders */
+    --border-subtle: 0 0% 15%;    /* #262626 - Subtle borders */
+    
+    /* Gradients */
+    --gradient-top: 0 0% 19%;     /* #303030 - Gradient start */
+    --gradient-bottom: 0 0% 7.06%;/* #121212 - Gradient end */
+
+    /* Standard tokens */
+    --background: 0 0% 7.06%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 9.41%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 9.41%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 141 73% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70.2%;
+    --accent: 141 73% 42%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 141 73% 42%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Circular Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--bg-sidebar));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--bg-card-hover));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--border-subtle));
+  }
+
+  /* Hide scrollbar for horizontally scrolling sections on mobile */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer utilities {
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .transition-smooth-400 {
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  /* Content gradient background */
+  .bg-gradient-content {
+    background: linear-gradient(180deg, hsl(var(--gradient-top)) 0%, hsl(var(--gradient-bottom)) 300px);
+  }
+
+  /* Mobile navigation gradient */
+  .bg-gradient-nav {
+    background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.7));
+  }
+
+  /* Spotify button styles */
+  .btn-spotify-green {
+    background-color: hsl(var(--spotify-green));
+    color: hsl(var(--text-base));
+    transition: all 0.2s ease;
+  }
+
+  .btn-spotify-green:hover {
+    background-color: hsl(var(--spotify-green-hover));
+    transform: scale(1.04);
+  }
+
+  /* Full screen player animation */
+  @keyframes slide-in-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-in-up {
+    animation: slide-in-up 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+}

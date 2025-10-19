@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { User } from 'lucide-react';
+import { ArrowDownCircle, User } from 'lucide-react';
 
 const Header: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
@@ -43,7 +43,8 @@ const Header: React.FC = () => {
           onScroll={updateShadows}
           className="flex items-center gap-2 sm:gap-4 overflow-x-auto scrollbar-hide whitespace-nowrap justify-end sm:justify-end px-2 scroll-smooth"
         >
-          <button className="whitespace-nowrap px-3 sm:px-6 py-2 bg-text-base text-bg-base text-xs sm:text-sm font-semibold rounded-full hover:scale-105 transition-smooth border-2 border-spotify-green">
+          <button className="flex items-center gap-2 whitespace-nowrap px-3 sm:px-6 py-2 bg-text-base text-bg-base text-xs sm:text-sm font-semibold rounded-full hover:scale-105 transition-smooth">
+            <ArrowDownCircle className="h-4 w-4" />
             Resume
           </button>
           <button className="whitespace-nowrap px-3 sm:px-6 py-2 border border-text-base text-text-base text-xs sm:text-sm font-semibold rounded-full hover:scale-105 transition-smooth">

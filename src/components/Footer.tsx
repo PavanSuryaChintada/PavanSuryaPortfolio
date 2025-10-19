@@ -63,9 +63,9 @@ export default function Footer({ showNowPlaying = false }: FooterProps) {
         </div>
       )}
 
-      <div className="mx-auto max-w-7xl px-4 pt-10 pb-8 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 pt-10 pb-8 sm:px-6 lg:px-8 ">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
-          <div className="grid flex-1 grid-cols-1 gap-8 text-center sm:grid-cols-2 sm:text-left lg:grid-cols-4">
+          <div className="grid flex-1 grid-cols-1 gap-8 text-center sm:text-left lg:grid-cols-4">
             {/* Updated FooterColumn components to use new keys */}
             <FooterColumn title="Navigation" items={footerLinks.navigation} />
             <FooterColumn title="Resources" items={footerLinks.resources} />
@@ -81,20 +81,20 @@ export default function Footer({ showNowPlaying = false }: FooterProps) {
 
       <div className="border-t border-neutral-800">
         <div className="mx-auto max-w-7xl px-4 py-6 text-xs sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center gap-4 md:flex-row md:items-center md:justify-between">
-            <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] uppercase tracking-wide text-[#b3b3b3] md:justify-start">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#b3b3b3] md:justify-start">
               {legalLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="transition-colors duration-200 hover:text-white"
+                    className="font-semibold transition-colors duration-200 hover:text-white"
                   >
                     {link.label}
                   </a>
                 </li>
               ))}
             </ul>
-            <div className="text-center text-[11px] text-[#b3b3b3] md:text-right">
+            <div className="text-left text-xs font-semibold text-[#b3b3b3] md:text-right">
               © 2025 Your Name – Built with ❤️ using React + Spotify API
             </div>
           </div>
@@ -121,7 +121,7 @@ function FooterColumn({
           <li key={item.label}>
             <a
               href={item.href}
-              className="transition-colors duration-200 hover:text-white hover:underline decoration-[#1DB954] underline-offset-4"
+              className="text-[#b3b3b3] font-semibold transition-colors duration-200 hover:text-white hover:underline decoration-white underline-offset-4"
             >
               {item.label}
             </a>
@@ -134,34 +134,34 @@ function FooterColumn({
 
 function Socials() {
   const iconClass =
-    "h-5 w-5 text-[#b3b3b3] transition-colors duration-200 group-hover:text-[#1DB954]";
+    "h-5 w-5 text-[#b3b3b3] transition-colors duration-200 group-hover:text-white";
   return (
     <div className="flex items-center gap-3 sm:gap-4">
       <a
         href="#"
         aria-label="GitHub"
-        className="group rounded-full bg-neutral-900 p-2 transition-colors duration-200 hover:bg-neutral-800"
+        className="group rounded-full bg-neutral-900 p-2 transition-colors duration-200 hover:bg-[#5e5e5e]"
       >
         <Github className={iconClass} />
       </a>
       <a
         href="#"
         aria-label="LinkedIn"
-        className="group rounded-full bg-neutral-900 p-2 transition-colors duration-200 hover:bg-neutral-800"
+        className="group rounded-full bg-neutral-900 p-2 transition-colors duration-200 hover:bg-[#5e5e5e]"
       >
         <Linkedin className={iconClass} />
       </a>
       <a
         href="#"
         aria-label="Twitter / X"
-        className="group rounded-full bg-neutral-900 p-2 transition-colors duration-200 hover:bg-neutral-800"
+        className="group rounded-full bg-neutral-900 p-2 transition-colors duration-200 hover:bg-[#5e5e5e]"
       >
         <Twitter className={iconClass} />
       </a>
       <a
         href="#"
         aria-label="Email"
-        className="group rounded-full bg-neutral-900 p-2 transition-colors duration-200 hover:bg-neutral-800"
+        className="group rounded-full bg-neutral-900 p-2 transition-colors duration-200 hover:bg-[#5e5e5e]"
       >
         <Mail className={iconClass} />
       </a>

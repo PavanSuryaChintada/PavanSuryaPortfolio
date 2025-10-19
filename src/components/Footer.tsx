@@ -1,93 +1,101 @@
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 import React from "react";
 
 type FooterProps = {
   showNowPlaying?: boolean;
 };
 
-const links = {
-  portfolio: [
+// Updated, more professional link structure
+const footerLinks = {
+  navigation: [
     { label: "About Me", href: "#" },
     { label: "Experience", href: "#" },
+    { label: "Projects", href: "#" },
     { label: "Contact", href: "#" },
-    { label: "Resume", href: "#" },
   ],
   resources: [
     { label: "Blog / Articles", href: "#" },
-    { label: "Open Source Contributions", href: "#" },
-    { label: "GitHub Repositories", href: "#" },
+    { label: "Open Source", href: "#" },
     { label: "Tutorials / Guides", href: "#" },
     { label: "Code Snippets", href: "#" },
+    { label: "Tech Stack", href: "#" },
   ],
   connect: [
     { label: "LinkedIn", href: "#" },
     { label: "GitHub", href: "#" },
     { label: "Twitter / X", href: "#" },
     { label: "Email", href: "#" },
-    { label: "Newsletter / Subscribe", href: "#" },
+    { label: "Newsletter", href: "#" },
   ],
   extras: [
-    { label: "Now Playing 🎵 (Spotify API widget placeholder)", href: "#" },
-    { label: "Side Projects / Experiments", href: "#" },
+    { label: "Side Projects", href: "#" },
+    { label: "Experiments", href: "#" },
+    { label: "Resume", href: "#" },
     { label: "Changelog", href: "#" },
     { label: "Design Inspirations", href: "#" },
-    { label: "Support / Buy Me a Coffee ☕", href: "#" },
   ],
 };
 
-const legal = [
+const legalLinks = [
   { label: "Privacy Policy", href: "#" },
   { label: "License", href: "#" },
-  { label: "Accessibility", href: "#" },
   { label: "Changelog", href: "#" },
+  { label: "Accessibility", href: "#" },
 ];
 
 export default function Footer({ showNowPlaying = false }: FooterProps) {
   return (
-    <footer className="bg-[#121212] text-[#b3b3b3]">
+    <footer className="mt-auto bg-[#121212] text-[#b3b3b3]">
       {showNowPlaying && (
         <div className="border-t border-neutral-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
-            <div className="flex items-center justify-between gap-4">
+          <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <div className="text-sm">Now Playing — placeholder</div>
-              <div className="h-2 w-2 rounded-full bg-[#1DB954] animate-pulse" aria-hidden="true" />
+              <div className="flex items-center gap-2 text-xs text-[#b3b3b3]">
+                <div
+                  className="h-2 w-2 animate-pulse rounded-full bg-[#1DB954]"
+                  aria-hidden="true"
+                />
+                <span className="hidden sm:inline">Streaming from Spotify</span>
+              </div>
             </div>
           </div>
         </div>
       )}
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 pb-8">
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 flex-1 text-center sm:text-left">
-            <FooterColumn title="Portfolio" items={links.portfolio} />
-            <FooterColumn title="Resources" items={links.resources} />
-            <FooterColumn title="Connect" items={links.connect} />
-            <FooterColumn title="Extras" items={links.extras} />
+      <div className="mx-auto max-w-7xl px-4 pt-10 pb-8 sm:px-6 lg:px-8">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+          <div className="grid flex-1 grid-cols-1 gap-8 text-center sm:grid-cols-2 sm:text-left lg:grid-cols-4">
+            {/* Updated FooterColumn components to use new keys */}
+            <FooterColumn title="Navigation" items={footerLinks.navigation} />
+            <FooterColumn title="Resources" items={footerLinks.resources} />
+            <FooterColumn title="Connect" items={footerLinks.connect} />
+            <FooterColumn title="Extras" items={footerLinks.extras} />
           </div>
 
-          <div className="flex w-full lg:w-auto items-center lg:items-start gap-4 justify-center lg:justify-end">
+          <div className="flex w-full items-center justify-center gap-4 sm:gap-5 lg:w-auto lg:items-start lg:justify-end">
             <Socials />
           </div>
         </div>
       </div>
 
       <div className="border-t border-neutral-800">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs">
-            <ul className="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-2">
-              {legal.map((l) => (
-                <li key={l.label}>
+        <div className="mx-auto max-w-7xl px-4 py-6 text-xs sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center gap-4 md:flex-row md:items-center md:justify-between">
+            <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] uppercase tracking-wide text-[#b3b3b3] md:justify-start">
+              {legalLinks.map((link) => (
+                <li key={link.label}>
                   <a
-                    href={l.href}
-                    className="hover:text-white transition-colors duration-200"
+                    href={link.href}
+                    className="transition-colors duration-200 hover:text-white"
                   >
-                    {l.label}
+                    {link.label}
                   </a>
                 </li>
               ))}
             </ul>
-            <div className="text-center md:text-right text-[11px] md:text-xs text-[#b3b3b3]">
-              © 2025 Your Name – Built with ❤️ using React + Spotify API · v2.3.0 – Updated October 2025
+            <div className="text-center text-[11px] text-[#b3b3b3] md:text-right">
+              © 2025 Your Name – Built with ❤️ using React + Spotify API
             </div>
           </div>
         </div>
@@ -105,13 +113,15 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3 className="mb-3 text-white text-sm tracking-wide">{title}</h3>
+      <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white">
+        {title}
+      </h3>
       <ul className="space-y-3 text-sm">
         {items.map((item) => (
           <li key={item.label}>
             <a
               href={item.href}
-              className="hover:text-white hover:underline underline-offset-4 transition-colors duration-200"
+              className="transition-colors duration-200 hover:text-white hover:underline decoration-[#1DB954] underline-offset-4"
             >
               {item.label}
             </a>
@@ -124,19 +134,35 @@ function FooterColumn({
 
 function Socials() {
   const iconClass =
-    "h-5 w-5 text-[#b3b3b3] hover:text-[#1DB954] transition-colors duration-200";
+    "h-5 w-5 text-[#b3b3b3] transition-colors duration-200 group-hover:text-[#1DB954]";
   return (
-    <div className="flex items-center gap-4">
-      <a href="#" aria-label="GitHub" className="p-2 rounded-full bg-neutral-900 hover:bg-neutral-800 transition-colors">
+    <div className="flex items-center gap-3 sm:gap-4">
+      <a
+        href="#"
+        aria-label="GitHub"
+        className="group rounded-full bg-neutral-900 p-2 transition-colors duration-200 hover:bg-neutral-800"
+      >
         <Github className={iconClass} />
       </a>
-      <a href="#" aria-label="LinkedIn" className="p-2 rounded-full bg-neutral-900 hover:bg-neutral-800 transition-colors">
+      <a
+        href="#"
+        aria-label="LinkedIn"
+        className="group rounded-full bg-neutral-900 p-2 transition-colors duration-200 hover:bg-neutral-800"
+      >
         <Linkedin className={iconClass} />
       </a>
-      <a href="#" aria-label="Twitter / X" className="p-2 rounded-full bg-neutral-900 hover:bg-neutral-800 transition-colors">
+      <a
+        href="#"
+        aria-label="Twitter / X"
+        className="group rounded-full bg-neutral-900 p-2 transition-colors duration-200 hover:bg-neutral-800"
+      >
         <Twitter className={iconClass} />
       </a>
-      <a href="#" aria-label="Email" className="p-2 rounded-full bg-neutral-900 hover:bg-neutral-800 transition-colors">
+      <a
+        href="#"
+        aria-label="Email"
+        className="group rounded-full bg-neutral-900 p-2 transition-colors duration-200 hover:bg-neutral-800"
+      >
         <Mail className={iconClass} />
       </a>
     </div>

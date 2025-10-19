@@ -59,19 +59,20 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div 
-      className="min-h-screen transition-all duration-500"
+    <div
+      className="flex h-full flex-col min-h-0 transition-all duration-500"
       style={{
-        background: gradientColor 
+        background: gradientColor
           ? `linear-gradient(180deg, hsl(${gradientColor}) 0%, hsl(var(--gradient-bottom)) 300px)`
           : 'linear-gradient(180deg, hsl(var(--gradient-top)) 0%, hsl(var(--gradient-bottom)) 300px)'
       }}
     >
-      <Header />
+      <div className="flex-1 overflow-y-auto">
+        <Header />
 
-      {/* Main Content */}
-      <div className="px-6 pb-8 pt-6">
-        <AnimatePresence mode="wait">
+        {/* Main Content */}
+        <div className="px-6 pb-8 pt-6">
+          <AnimatePresence mode="wait">
           {!showSeeAll && (
             <motion.div
               key="home-main"
@@ -180,7 +181,9 @@ const Home: React.FC = () => {
               </div>
             </motion.div>
           )}
-        </AnimatePresence>
+          </AnimatePresence>
+        </div>
+
       </div>
     </div>
   );

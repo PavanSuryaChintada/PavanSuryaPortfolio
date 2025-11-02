@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from '@/components/desktop/Header';
-import { Play, Clock, Code2, Atom, Cloud, Container, Cog, ChevronUp, ChevronDown, ArrowLeft } from 'lucide-react';
+import { Play, Clock, Code2, Atom, Cloud, Container, Cog, ChevronUp, ChevronDown, ArrowLeft, Check, ListMusic, LayoutGrid } from 'lucide-react';
+import ActionBar from '@/components/ActionBar';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Progress } from '@/components/ui/progress';
 import {
@@ -29,6 +30,28 @@ const Skills: React.FC = () => {
   const [sortKey, setSortKey] = useState<SortKey | null>(null);
   const [sortOrder, setSortOrder] = useState<SortOrder>('asc');
   const [selectedSkill, setSelectedSkill] = useState<SkillData | null>(null);
+  const [view, setView] = useState<'list' | 'compact'>('list');
+  const [showViewMenu, setShowViewMenu] = useState(false);
+  const [displayedSkills, setDisplayedSkills] = useState<SkillData[]>([]);
+  const [isShuffled, setIsShuffled] = useState(false);
+
+  // Initialize displayedSkills with skillsData
+  React.useEffect(() => {
+    setDisplayedSkills([...skillsData]);
+  }, []);
+
+  const handleShuffleToggle = () => {
+    if (isShuffled) {
+      // Reset to original order
+      setDisplayedSkills([...skillsData]);
+      setIsShuffled(false);
+    } else {
+      // Shuffle the skills
+      const shuffled = [...skillsData].sort(() => Math.random() - 0.5);
+      setDisplayedSkills(shuffled);
+      setIsShuffled(true);
+    }
+  };
 
   const skillsData: SkillData[] = [
     { id: 1, icon: <Code2 className="w-8 h-8 text-blue-400" />, skill: 'Python', subtitle: 'Anirudh Raviguage', category: 'Backend', experience: '1 Year', progress: 20 },
@@ -49,7 +72,7 @@ const Skills: React.FC = () => {
     }
   };
 
-  const sortedData = [...skillsData].sort((a, b) => {
+  const sortedData = [...displayedSkills].sort((a, b) => {
     if (!sortKey) return 0;
     
     const aValue = a[sortKey];
@@ -72,19 +95,87 @@ const Skills: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-bg-base">
+    <div className="min-h-screen bg-gradient-to-b from-[#1f1f1f] to-[#121212]">
       <Header />
-      <div className="px-6 pb-8 pt-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="w-16 h-16 rounded-full bg-spotify-green flex items-center justify-center">
-              <Play className="w-8 h-8 text-black fill-black ml-1" />
+      <div className="relative z-10 px-8 py-6">
+        {/* Expertise Header with two columns */}
+        <div className="w-full max-w-7xl mx-auto">
+          <div className="flex flex-col">
+            {/* Two-column layout */}
+            <div className="flex gap-6">
+              {/* Left column - Icon */}
+              <div className="w-48 flex-shrink-0">
+                <div className="w-48 h-48 bg-gradient-to-br from-[#1DB954] to-[#1a5b3a] shadow-2xl rounded-md flex items-center justify-center">
+                  <Code2 className="w-24 h-24 text-white" />
+                </div>
+              </div>
+              
+              {/* Right column - Text content */}
+              <div className="flex-1">
+                <span className="text-xs font-semibold text-white/70 tracking-widest">SKILLS & EXPERTISE</span>
+                <h1 className="text-7xl font-bold text-white mt-2 mb-4 tracking-tight">My Expertise</h1>
+                <div className="flex items-center">
+                  <div className="w-10 h-1 bg-[#1DB954] mr-2"></div>
+                  <span className="text-sm font-medium text-[#1DB954] tracking-wider">MY SKILLS</span>
+                </div>
+                <p className="text-white/70 text-sm mt-2 max-w-2xl leading-relaxed">
+                  A collection of my technical skills and expertise across various technologies and frameworks that I've mastered over the years.
+                </p>
+              </div>
             </div>
-            <h1 className="text-text-base text-5xl font-bold">My Expertise</h1>
+            
+            {/* Action Bar - Full width below both columns */}
+            <div className="mt-8 w-full relative">
+              <ActionBar 
+                onViewToggle={() => setShowViewMenu(!showViewMenu)}
+                currentView={view}
+                isShuffled={isShuffled}
+                onShuffleToggle={handleShuffleToggle}
+              />
+              
+              {/* View Dropdown Menu */}
+              {showViewMenu && (
+                <div className="absolute right-0 mt-2 w-48 bg-[#282828] rounded-md shadow-2xl z-50 overflow-hidden">
+                  <div className="px-4 py-3 border-b border-[#3e3e3e]">
+                    <h3 className="text-white text-sm font-semibold">View as</h3>
+                  </div>
+                  <div 
+                    className="px-4 py-3 hover:bg-[#3e3e3e] cursor-pointer flex items-center justify-between"
+                    onClick={() => {
+                      setView('list');
+                      setShowViewMenu(false);
+                    }}
+                  >
+                    <div className="flex items-center">
+                      <ListMusic className="w-4 h-4 mr-3 text-gray-400" />
+                      <span className="text-white text-sm">List</span>
+                    </div>
+                    {view === 'list' && <Check className="w-4 h-4 text-spotify-green" />}
+                  </div>
+                  <div 
+                    className="px-4 py-3 hover:bg-[#3e3e3e] cursor-pointer flex items-center justify-between"
+                    onClick={() => {
+                      setView('compact');
+                      setShowViewMenu(false);
+                    }}
+                  >
+                    <div className="flex items-center">
+                      <LayoutGrid className="w-4 h-4 mr-3 text-gray-400" />
+                      <span className="text-white text-sm">Compact</span>
+                    </div>
+                    {view === 'compact' && <Check className="w-4 h-4 text-spotify-green" />}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
+        </div>
+      </div>
 
+      <div className="relative z-0 px-8 py-6">
+        <div className="max-w-7xl mx-auto">
           <AnimatePresence mode="wait">
-            {!selectedSkill && (
+            {!selectedSkill && view === 'list' && (
               <motion.div
                 key="skills-list"
                 initial={{ opacity: 1 }}
@@ -178,6 +269,62 @@ const Skills: React.FC = () => {
               </motion.div>
             )}
 
+            {view === 'compact' && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className="bg-[#121212] rounded-lg overflow-hidden"
+              >
+                <div className="px-6 py-4 border-b border-[#282828]">
+                  <div className="grid grid-cols-12 gap-4 text-xs text-[#b3b3b3] font-medium">
+                    <div className="col-span-1">#</div>
+                    <div className="col-span-5">TITLE</div>
+                    <div className="col-span-4">CATEGORY</div>
+                    <div className="col-span-2 flex justify-end">
+                      <Clock className="w-4 h-4" />
+                    </div>
+                  </div>
+                </div>
+                <div className="divide-y divide-[#282828]">
+                  {skillsData.map((skill, index) => (
+                    <div 
+                      key={skill.id}
+                      className="px-6 py-3 hover:bg-[#282828] group cursor-pointer transition-colors"
+                      onClick={() => setSelectedSkill(skill)}
+                    >
+                      <div className="grid grid-cols-12 gap-4 items-center">
+                        <div className="col-span-1 text-[#b3b3b3] text-sm group-hover:text-white">
+                          {index + 1}
+                        </div>
+                        <div className="col-span-5 flex items-center">
+                          <div className="w-10 h-10 bg-[#282828] rounded flex items-center justify-center mr-3">
+                            {React.cloneElement(skill.icon as React.ReactElement, { 
+                              className: 'w-5 h-5 text-white' 
+                            })}
+                          </div>
+                          <div>
+                            <div className="text-white font-medium group-hover:text-spotify-green">
+                              {skill.skill}
+                            </div>
+                            <div className="text-xs text-[#b3b3b3] group-hover:text-white">
+                              {skill.subtitle}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-span-4 text-sm text-[#b3b3b3] group-hover:text-white">
+                          {skill.category}
+                        </div>
+                        <div className="col-span-2 text-right text-sm text-[#b3b3b3] group-hover:text-white">
+                          {skill.experience}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+            
             {selectedSkill && (
               <motion.div
                 key="skill-detail"

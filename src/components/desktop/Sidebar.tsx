@@ -11,7 +11,7 @@ const Sidebar: React.FC = () => {
     { path: '/professional', label: 'Professional', icon: Search },
     { path: '/skills', label: 'Skills', icon: Library },
     { path: '/hire', label: 'Hire Me', icon: Plus },
-    { path: '/contact', label: 'Contact Me', icon: Heart },
+    { path: '/work-permit', label: 'Work Permit', icon: Heart },
   ];
 
   const playlists = [

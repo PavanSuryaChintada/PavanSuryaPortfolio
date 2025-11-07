@@ -32,13 +32,12 @@ const Home: React.FC = () => {
     : allPlaylists.filter(p => p.category === activeFilter.toLowerCase());
 
   const madeForYouItems = [
-    { title: 'Work Permit', subtitle: 'Visa & Authorization', imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=400&fit=crop', link: '/' },
+    { title: 'Work Permit', subtitle: 'Visa & Authorization', imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=400&fit=crop', link: '/work-permit' },
     { title: 'Skills', subtitle: 'Technical expertise', imageUrl: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=400&fit=crop', link: '/skills' },
     { title: 'Experience', subtitle: 'Work history', imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop', link: '/work-experience' },
     { title: 'Certifications', subtitle: 'Credentials', imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=400&fit=crop', link: '/certifications' },
     { title: 'Recommendations', subtitle: 'Testimonials', imageUrl: 'https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=400&h=400&fit=crop', link: '/' },
     { title: 'Projects', subtitle: 'Portfolio', imageUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=400&fit=crop', link: '/' },
-    { title: 'Contact Me', subtitle: 'Get in touch', imageUrl: 'https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=400&h=400&fit=crop', link: '/contact' },
   ];
 
   const scrollRef = React.useRef<HTMLDivElement>(null);

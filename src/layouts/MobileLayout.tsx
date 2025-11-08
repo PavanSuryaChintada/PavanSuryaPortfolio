@@ -5,9 +5,11 @@ import MobileHeader from '@/components/mobile/MobileHeader';
 
 interface MobileLayoutProps {
   children: React.ReactNode;
+  isLoading?: boolean;
 }
 
-const MobileLayout: React.FC<MobileLayoutProps> = ({ children }) => {
+const MobileLayout: React.FC<MobileLayoutProps> = ({ children, isLoading = false }) => {
+  // Note: Mobile skeleton loading can be implemented similarly if needed
   return (
     <div className="min-h-screen w-full pb-[150px]">
       <MobileHeader />

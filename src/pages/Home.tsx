@@ -19,9 +19,9 @@ const Home: React.FC = () => {
     : 'You';
 
   const allPlaylists = [
-    { title: 'Education', subtitle: 'Academic background', imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=300&h=300&fit=crop', category: 'professional', link: '/education', colorHsl: '141 50% 20%' }, // Spotify Green
+    { title: 'Education', subtitle: 'Academic background', imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=300&h=300&fit=crop', category: 'professional', link: '/education', colorHsl: '141 50% 20%' }, // Spotify Green
     { title: 'Languages', subtitle: 'Communication skills', imageUrl: 'https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?w=300&h=300&fit=crop', category: 'professional', link: '/languages', colorHsl: '205 30% 18%' }, // Teal/Blue
-    { title: 'Honors & Awards', subtitle: 'Achievements', imageUrl: 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=300&h=300&fit=crop', category: 'professional', link: '/awards', colorHsl: '40 45% 25%' }, // Gold
+    { title: 'Honors & Awards', subtitle: 'Achievements', imageUrl: 'https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=300&h=300&fit=crop', category: 'professional', link: '/awards', colorHsl: '40 45% 25%' }, // Gold
     { title: 'Volunteering', subtitle: 'Community service', imageUrl: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=300&h=300&fit=crop', category: 'professional', link: '/professional', colorHsl: '260 25% 15%' }, // Purple
     { title: 'Music', subtitle: 'Personal interests', imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=300&h=300&fit=crop', category: 'personal', link: '/', colorHsl: '180 25% 20%' }, // Pink
     { title: 'Art', subtitle: 'Creative pursuits', imageUrl: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=300&h=300&fit=crop', category: 'personal', link: '/', colorHsl: '15 30% 22%' }, // Orange

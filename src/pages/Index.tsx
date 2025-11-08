@@ -12,12 +12,14 @@ import WorkPermit from './WorkPermit';
 import DesktopLayout from '@/layouts/DesktopLayout';
 import MobileLayout from '@/layouts/MobileLayout';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { usePageLoading } from '@/hooks/use-page-loading';
 
 const Index = () => {
   const { hasSelectedProfile } = useAppContext();
   const isMobile = useIsMobile();
   const location = useLocation();
   const [showApp, setShowApp] = useState(false);
+  const { isLoading } = usePageLoading(true, 1500);
 
   useEffect(() => {
     if (hasSelectedProfile) {
@@ -63,7 +65,7 @@ const Index = () => {
   }
 
   return (
-    <Layout>
+    <Layout isLoading={isLoading}>
       {content}
     </Layout>
   );

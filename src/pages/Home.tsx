@@ -7,6 +7,8 @@ import FilterPills from '@/components/desktop/FilterPills';
 import { ChevronLeft, ChevronRight, ArrowLeft } from 'lucide-react';
 import { useColorExtractor } from '@/hooks/use-color-extractor';
 import { AnimatePresence, motion } from 'framer-motion';
+import { usePageLoading } from '@/hooks/use-page-loading';
+import { SkeletonMainContent } from '@/components/skeletons';
 
 const Home: React.FC = () => {
   const { selectedProfile } = useAppContext();
@@ -14,6 +16,7 @@ const Home: React.FC = () => {
   const { gradientColor, extractColor, clearColor, setColor } = useColorExtractor();
   const [activeFilter, setActiveFilter] = useState('Professional');
   const [showSeeAll, setShowSeeAll] = useState(false);
+  const { isLoading } = usePageLoading(true, 1500);
   const displayProfile = selectedProfile
     ? selectedProfile.charAt(0).toUpperCase() + selectedProfile.slice(1)
     : 'You';
@@ -56,6 +59,11 @@ const Home: React.FC = () => {
       });
     }
   };
+
+  // Show skeleton while loading
+  if (isLoading) {
+    return <SkeletonMainContent />;
+  }
 
   return (
     <div

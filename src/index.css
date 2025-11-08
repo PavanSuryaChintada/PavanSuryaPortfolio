@@ -143,4 +143,71 @@ All colors MUST be HSL.
   .animate-slide-in-up {
     animation: slide-in-up 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
+
+  /* Skeleton Loading Animations */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  /* Skeleton shimmer effect - matches reference image */
+  .skeleton-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(0 0% 16%) 0%,
+      hsl(0 0% 18%) 20%,
+      hsl(0 0% 20%) 40%,
+      hsl(0 0% 18%) 60%,
+      hsl(0 0% 16%) 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+  }
+
+  /* Skeleton pulse effect - alternative animation */
+  .skeleton-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Base skeleton element */
+  .skeleton {
+    background-color: hsl(0 0% 16%); /* #282828 - matches reference */
+    border-radius: 0.375rem;
+  }
+
+  /* Skeleton variants */
+  .skeleton-text {
+    height: 1rem;
+    background-color: hsl(0 0% 16%);
+    border-radius: 0.25rem;
+  }
+
+  .skeleton-text-sm {
+    height: 0.75rem;
+    background-color: hsl(0 0% 16%);
+    border-radius: 0.25rem;
+  }
+
+  .skeleton-card {
+    background-color: hsl(0 0% 16%);
+    border-radius: 0.5rem;
+  }
+
+  .skeleton-circle {
+    background-color: hsl(0 0% 16%);
+    border-radius: 9999px;
+  }
 }

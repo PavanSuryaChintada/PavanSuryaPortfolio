@@ -1,11 +1,9 @@
 import React from 'react';
 import Header from '@/components/desktop/Header';
 import { Trophy, Award as AwardIcon, Medal } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
+import BackButton from '@/components/ui/BackButton';
 
 const Awards: React.FC = () => {
-  const navigate = useNavigate();
 
   const awards = [
     {
@@ -42,13 +40,7 @@ const Awards: React.FC = () => {
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <h1 className="text-text-base text-4xl font-bold">Honors & Awards</h1>
-            <Button 
-              variant="outline" 
-              onClick={() => navigate(-1)}
-              className="border-spotify-green text-spotify-green hover:bg-spotify-green hover:text-black"
-            >
-              Back
-            </Button>
+            <BackButton />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

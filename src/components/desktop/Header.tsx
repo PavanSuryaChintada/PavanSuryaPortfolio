@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowDownCircle, User } from 'lucide-react';
+import { ArrowDownCircle, Briefcase, Eye, Code, Mountain } from 'lucide-react';
+import { useAppContext } from '@/contexts/AppContext';
 
 const Header: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
@@ -27,6 +28,24 @@ const Header: React.FC = () => {
     };
   }, []);
 
+  const { selectedProfile } = useAppContext();
+  
+  // Get the appropriate icon based on the selected profile
+  const getProfileIcon = () => {
+    switch (selectedProfile) {
+      case 'recruiter':
+        return <Briefcase className="w-5 h-5 text-text-base" />;
+      case 'stalker':
+        return <Eye className="w-5 h-5 text-text-base" />;
+      case 'developer':
+        return <Code className="w-5 h-5 text-text-base" />;
+      case 'adventurer':
+        return <Mountain className="w-5 h-5 text-text-base" />;
+      default:
+        return <Briefcase className="w-5 h-5 text-text-base" />;
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 flex flex-wrap items-center justify-between gap-3 px-3 sm:px-6 py-3 sm:py-4 bg-bg-elevated backdrop-blur-md border-b border-bg-highlight">
       {/* Left: Name */}
@@ -51,7 +70,7 @@ const Header: React.FC = () => {
             LinkedIn
           </button>
           <div className="hidden sm:flex w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden bg-bg-highlight items-center justify-center hover:scale-105 transition-smooth">
-            <img src="/src/assets/avatar.png" alt="Profile" className="w-full h-full object-cover" />
+            {getProfileIcon()}
           </div>
         </div>
         {showLeft && (

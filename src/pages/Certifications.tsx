@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '@/components/desktop/Header';
-import { Award, Code, FileSpreadsheet, Waves } from 'lucide-react';
+import { Award, Code, Cog, FileSpreadsheet, Waves } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,25 +10,67 @@ const Certifications: React.FC = () => {
   const certifications = [
     {
       title: 'Responsive Web Design using Flexbox',
-      issuer: 'Certification Authority',
+      issuer: 'NxtWave CCBP Academy',
       icon: Code,
       category: 'Web Development'
     },
     {
       title: 'Build Your Own Responsive Website',
-      issuer: 'Developer Foundations',
+      issuer: 'NxtWave CCBP Academy',
       icon: Code,
       category: 'Web Development'
     },
     {
+      title: 'Build Your Own Dynamic Web Application',
+      issuer: 'NxtWave CCBP Academy',
+      icon: Code,
+      category: 'Web Development'
+    },
+    {
+      title: 'Developer Foundations',
+      issuer: 'NxtWave CCBP Academy',
+      icon: Code,
+      category: 'Web Development'
+    },
+    {
+      title: 'Introduction to Databases',
+      issuer: 'NxtWave CCBP Academy',
+      icon: Code,
+      category: 'Databases'
+    },
+    {
+      title: 'Automation Workflow Workshop',
+      issuer: 'CCBP Academy',
+      icon: Cog,
+      category: 'Automation'
+    },
+    {
+      title: 'Dynamic Website Creation',
+      issuer: 'CCBP Academy',
+      icon: Code,
+      category: 'Web Development'
+    },
+    {
+      title: 'Advanced JavaScript',
+      issuer: 'CCBP Academy',
+      icon: Code,
+      category: 'Web Development'
+    },
+    {
+      title: 'Node.js Development',
+      issuer: 'CCBP Academy',
+      icon: Code,
+      category: 'Backend'
+    },
+    {
       title: 'Microsoft Excel Beginner to Expert',
-      issuer: 'Microsoft',
+      issuer: 'Udemy',
       icon: FileSpreadsheet,
       category: 'Productivity'
     },
     {
       title: 'Scuba Diving',
-      issuer: 'Professional Diving Association',
+      issuer: 'Ministry of Youth Affairs & Sports, Govt. of India',
       icon: Waves,
       category: 'Personal Development'
     }

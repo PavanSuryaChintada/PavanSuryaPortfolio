@@ -8,27 +8,39 @@ const Awards: React.FC = () => {
   const awards = [
     {
       title: 'District Declamation 1st Prize',
-      event: 'District Level Competition',
+      event: 'Department of Youth Services, Srikakulam (Sep 2024)',
       icon: Trophy,
       level: 'Gold'
     },
     {
       title: 'State Declamation 1st Prize',
-      event: 'State Level Competition',
+      event: 'Department of Youth Services, Andhra Pradesh (Dec 2022)',
       icon: Trophy,
       level: 'Gold'
     },
     {
       title: 'National Declamation (NYF) Participant',
-      event: 'National Youth Festival',
+      event: 'National Youth Festival 2024, Nashik, Maharashtra',
       icon: Medal,
       level: 'National'
     },
     {
       title: 'Declamation 3rd Prize',
-      event: 'Regional Competition',
+      event: 'NYKS Srikakulam - Selected to Nationals (Jun 2023)',
       icon: AwardIcon,
       level: 'Bronze'
+    },
+    {
+      title: 'PPT First Prize',
+      event: 'Techniverse 2k24',
+      icon: Trophy,
+      level: 'Gold'
+    },
+    {
+      title: '24-Hour Nonstop Coding Challenge',
+      event: 'First year engineering - Motivated 10+ peers',
+      icon: Medal,
+      level: 'Achievement'
     }
   ];
 

@@ -65,17 +65,17 @@ const Professional: React.FC = () => {
   }, []);
 
   const timelineEvents: TimelineEvent[] = [
-    { title: 'Web Developer / AI Solutions Intern', organization: 'ScoMedia', dateRange: 'Aug 2025 - Present', category: 'all', icon: Code },
+    { title: 'Web Developer / AI Solutions Intern', organization: 'Scomedia (Yashray Foundation)', dateRange: 'Aug 2025 - Jan 2026', category: 'all', icon: Code },
     { title: 'Growth Intern / Zonal Head', organization: 'Student Tribe', dateRange: 'July 2025 - Present', category: 'all', icon: Users },
-    { title: 'Web Developer', organization: 'MOONS', dateRange: 'June 2024 - Aug 2025', category: 'all', icon: Code },
-    { title: 'Research And Development Intern', organization: 'RGUKT', dateRange: 'Dec 2024 - Feb 2025', category: 'college-work', icon: BookOpen },
-    { title: 'Public Relations Manager', organization: 'SGC-RGUKT', dateRange: 'May 2024 - Apr 2025', category: 'college-work', icon: Megaphone },
+    { title: 'Web Developer', organization: 'Moons - The Creative Minds', dateRange: 'June 2024 - June 2025', category: 'all', icon: Code },
+    { title: 'Research And Development Intern', organization: 'RGUKT Srikakulam', dateRange: 'Dec 2024 - Feb 2025', category: 'college-work', icon: BookOpen },
+    { title: 'Public Relations Manager', organization: 'Students Gymkhana Center (SGC) RGUKT', dateRange: 'May 2024 - Apr 2025', category: 'college-work', icon: Megaphone },
     { title: 'General Secretary', organization: 'Digital Literacy Club', dateRange: 'July 2024 - Sep 2024', category: 'college-work', icon: Award },
     { title: 'Executive Member', organization: 'Digital Literacy Club', dateRange: 'Jan 2024 - July 2024', category: 'college-work', icon: Users },
-    { title: 'Executive Member', organization: 'Electronics Club', dateRange: 'Sep 2023 - July 2024', category: 'college-work', icon: Users },
+    { title: 'Executive Member', organization: 'Electronics Club, SGC RGUKT Srikakulam', dateRange: 'Sep 2023 - July 2024', category: 'college-work', icon: Users },
     { title: 'Student Ambassador', organization: 'StudyWithUs', dateRange: 'Dec 2022 - Apr 2023', category: 'college-work', icon: Award },
     { title: 'Incharge', organization: 'English Literary Club', dateRange: 'Oct 2022 - June 2023', category: 'college-work', icon: BookOpen },
-    { title: 'Student Teaching (C Language)', organization: 'RGUKT', dateRange: 'Oct 2022 - Dec 2022', category: 'college-work', icon: BookOpen },
+    { title: 'Student Teaching (C Language)', organization: 'StudyWithUs', dateRange: 'Oct 2022 - Dec 2022', category: 'college-work', icon: BookOpen },
     { title: 'Volunteer', organization: 'English Literary Club', dateRange: 'July 2022 - Oct 2022', category: 'college-work', icon: Users },
   ];
 
@@ -151,7 +151,7 @@ const Professional: React.FC = () => {
               const halfHeight = (cardHeights[index] ?? 120) / 2;
               let cy = measuredTop + halfHeight;
               // If this is the ScoMedia card, its card was moved up; keep the dot in original place
-              const isScoMediaDot = (ev?.organization === 'ScoMedia') || (ev?.title?.includes('AI Solutions Intern'));
+              const isScoMediaDot = (ev?.organization?.includes('Scomedia')) || (ev?.title?.includes('AI Solutions Intern'));
               if (isScoMediaDot) {
                 const scoNudge = 35;
                 cy += scoNudge; 
@@ -162,12 +162,12 @@ const Professional: React.FC = () => {
                 cy += 40;
               }
               // Nudge MOONS dot slightly downward
-              const isMoonsDot = ev?.title === 'Web Developer' && ev?.organization === 'MOONS';
+              const isMoonsDot = ev?.title === 'Web Developer' && ev?.organization?.includes('Moons');
               if (isMoonsDot) {
                 cy += 42;
               }
               // Keep PRM (SGC-RGUKT) dot stationary when its card is nudged up
-              const isPRMDot = ev?.title === 'Public Relations Manager' && ev?.organization === 'SGC-RGUKT';
+              const isPRMDot = ev?.title === 'Public Relations Manager' && ev?.organization?.includes('SGC');
               if (isPRMDot) {
                 const prmNudge = 44 // must match PRM card upward nudge below
                 cy += prmNudge;
@@ -185,7 +185,7 @@ const Professional: React.FC = () => {
                 cy += execNudge;
               }
               // Nudge Executive Member (Electronics Club) dot slightly downward
-              const isExecElectronicsDot = ev?.title === 'Executive Member' && ev?.organization === 'Electronics Club';
+              const isExecElectronicsDot = ev?.title === 'Executive Member' && ev?.organization?.includes('Electronics');
               if (isExecElectronicsDot) {
                 cy += 40;
               }
@@ -195,7 +195,7 @@ const Professional: React.FC = () => {
                 cy += 46;
               }
               // Nudge Student Teaching (C Language) dot slightly downward
-              const isStudentTeachingDot = ev?.title === 'Student Teaching (C Language)' && ev?.organization === 'RGUKT';
+              const isStudentTeachingDot = ev?.title === 'Student Teaching (C Language)' && ev?.organization?.includes('StudyWithUs');
               if (isStudentTeachingDot) {
                 cy += 40;
               }
@@ -210,7 +210,7 @@ const Professional: React.FC = () => {
                 cy += 42;
               }
               // Nudge R&D (RGUKT) dot slightly downward
-              const isRandDDot = ev?.title === 'Research And Development Intern' && ev?.organization === 'RGUKT';
+              const isRandDDot = ev?.title === 'Research And Development Intern' && ev?.organization?.includes('RGUKT');
               if (isRandDDot) {
                 cy += 40;
               }
@@ -268,17 +268,17 @@ const Professional: React.FC = () => {
               const isLeft = index % 2 === 0;
               // Nudge cards away from the center line to avoid touching it
               // Special-case adjustment: move 'Web Developer' (MOONS) slightly left
-              const isMoons = event.title === 'Web Developer' && event.organization === 'MOONS';
+              const isMoons = event.title === 'Web Developer' && event.organization?.includes('Moons');
               // Move the two shown left cards a bit further left
               const isStudentAmbassador = event.title === 'Student Ambassador';
               const isStudentTeaching = event.title === 'Student Teaching (C Language)';
-              const isScoMedia = (event.organization === 'ScoMedia') || (event.title?.includes('AI Solutions Intern'));
+              const isScoMedia = (event.organization?.includes('Scomedia')) || (event.title?.includes('AI Solutions Intern'));
               const isStudentTribe = event.title === 'Growth Intern / Zonal Head' && event.organization === 'Student Tribe';
-              const isRandD = event.title === 'Research And Development Intern' && event.organization === 'RGUKT';
-              const isPRM = event.title === 'Public Relations Manager' && event.organization === 'SGC-RGUKT';
+              const isRandD = event.title === 'Research And Development Intern' && event.organization?.includes('RGUKT');
+              const isPRM = event.title === 'Public Relations Manager' && event.organization?.includes('SGC');
               const isGenSec = event.title === 'General Secretary' && event.organization === 'Digital Literacy Club';
               const isExecDLC = event.title === 'Executive Member' && event.organization === 'Digital Literacy Club';
-              const isExecElec = event.title === 'Executive Member' && event.organization === 'Electronics Club';
+              const isExecElec = event.title === 'Executive Member' && event.organization?.includes('Electronics');
               const isIncharge = event.title === 'Incharge' && event.organization === 'English Literary Club';
               const isVolunteer = event.title === 'Volunteer' && event.organization === 'English Literary Club';
               const leftPosition = isLeft

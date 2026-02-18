@@ -63,10 +63,10 @@ const RightSidebar: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-text-base font-bold text-lg mb-1">Manu Pilas</h3>
-              <p className="text-text-subdued text-xs mb-2">12,345,678 monthly listeners</p>
+              <h3 className="text-text-base font-bold text-lg mb-1">Pavan Surya Chintada</h3>
+              <p className="text-text-subdued text-xs mb-2">Full-Stack Developer</p>
               <p className="text-text-subdued text-sm mb-3 line-clamp-3">
-                A revolutionary anthem that has become synonymous with resistance and freedom.
+                EC undergrad & MERN full-stack developer. Skilled in React, Node.js, Python, AI automation. National-level declamation participant.
               </p>
               <Button variant="outline" className="w-full">Follow</Button>
             </CardContent>
@@ -95,7 +95,7 @@ const RightSidebar: React.FC = () => {
                 <div className="overflow-hidden">
                   <div className="animate-marquee whitespace-nowrap">
                     <h2 className="text-white text-2xl font-bold inline-block">
-                      Casa de Papel/ Money H&nbsp;&nbsp;&nbsp;&nbsp;Casa de Papel/ Money H&nbsp;&nbsp;&nbsp;&nbsp;
+                      Full-Stack Developer&nbsp;&nbsp;&nbsp;&nbsp;Full-Stack Developer&nbsp;&nbsp;&nbsp;&nbsp;
                     </h2>
                   </div>
                   
@@ -109,27 +109,25 @@ const RightSidebar: React.FC = () => {
 
                 {/* Bottom Section - Artist Name and About */}
                 <div>
-                  <p className="text-white text-lg font-semibold mb-3">Manu Pilas</p>
+                  <p className="text-white text-lg font-semibold mb-3">Pavan Surya Chintada</p>
                   <div className="bg-black/40 backdrop-blur-sm rounded-lg p-3">
-                    <h3 className="text-white text-xs font-bold mb-1.5">About the artist</h3>
+                    <h3 className="text-white text-xs font-bold mb-1.5">About</h3>
                     <p className="text-white/70 text-xs leading-relaxed">
-                      A revolutionary anthem that has become synonymous with resistance and freedom. 
-                      Originally an Italian folk song, it gained worldwide recognition through 
-                      its powerful use in popular culture.
+                      EC undergrad learning MERN full-stack at NxtWave. Skilled in React, Node.js, Express, Python, SQL, and AI workflow automation. Curious about IoT & embedded systems. National-level elocution participant.
                     </p>
                     
                     {/* Social Icons */}
                     <div className="flex items-center gap-3 mt-4 pt-3 border-t border-white/10">
-                      <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-spotify-green transition-colors">
+                      <a href="https://wa.me/919014404898" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-spotify-green transition-colors">
                         <MessageCircle size={18} />
                       </a>
-                      <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-spotify-green transition-colors">
+                      <a href="https://github.com/PavanSuryaChintada" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-spotify-green transition-colors">
                         <Github size={18} />
                       </a>
-                      <a href="mailto:" className="text-white/70 hover:text-spotify-green transition-colors">
+                      <a href="mailto:pavansuryachintada@gmail.com" className="text-white/70 hover:text-spotify-green transition-colors">
                         <Mail size={18} />
                       </a>
-                      <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-spotify-green transition-colors">
+                      <a href="https://www.linkedin.com/in/pavan-surya-chintada" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-spotify-green transition-colors">
                         <Linkedin size={18} />
                       </a>
                     </div>
@@ -153,8 +151,8 @@ const RightSidebar: React.FC = () => {
                 />
               </div>
               <div>
-                <p className="text-text-base text-sm font-medium">Manu Pilas</p>
-                <p className="text-text-subdued text-xs">Main Artist, Composer</p>
+                <p className="text-text-base text-sm font-medium">Pavan Surya Chintada</p>
+                <p className="text-text-subdued text-xs">Full-Stack Developer</p>
               </div>
             </div>
             <Button variant="outline" className="w-full">Follow</Button>

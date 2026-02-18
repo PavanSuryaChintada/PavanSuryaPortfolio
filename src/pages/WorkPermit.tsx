@@ -35,9 +35,9 @@ const WorkPermit: React.FC = () => {
                 <span className="text-sm font-medium text-[#1DB954] tracking-wider">WORK STATUS</span>
               </div>
               <div className="mt-2 flex items-center space-x-4 text-sm text-[#b3b3b3]">
-                <span>Freelance Designer & Developer</span>
+                <span>Full-Stack Developer & AI Solutions Intern</span>
                 <span>•</span>
-                <span>Andhra Pradesh, India</span>
+                <span>Eluru, Andhra Pradesh, India</span>
               </div>
             </div>
           </div>
@@ -48,7 +48,7 @@ const WorkPermit: React.FC = () => {
           <div className="p-6 md:p-8">
             <div className="space-y-6 text-[#e0e0e0]">
               <p className="text-lg leading-relaxed">
-                I'm a Freelance Designer and Developer based in Andhra Pradesh, India, open to creative collaborations across India. I work with flexible hours to suit client requirements and project timelines, ensuring clear communication and quality results.
+                I'm a Full-Stack Developer and AI Solutions Intern based in Eluru, Andhra Pradesh, India, open to internships and collaborations across India. I work with flexible hours to suit project timelines, ensuring clear communication and quality results.
               </p>
               
               <p className="text-lg leading-relaxed">

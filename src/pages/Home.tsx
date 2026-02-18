@@ -40,7 +40,7 @@ const Home: React.FC = () => {
     { title: 'Experience', subtitle: 'Work history', imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop', link: '/work-experience' },
     { title: 'Certifications', subtitle: 'Credentials', imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=400&fit=crop', link: '/certifications' },
     { title: 'Recommendations', subtitle: 'Testimonials', imageUrl: 'https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=400&h=400&fit=crop', link: '/' },
-    { title: 'Projects', subtitle: 'Portfolio', imageUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=400&fit=crop', link: '/' },
+    { title: 'Projects', subtitle: 'Portfolio', imageUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=400&fit=crop', link: '/projects' },
   ];
 
   const scrollRef = React.useRef<HTMLDivElement>(null);

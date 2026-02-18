@@ -7,32 +7,32 @@ const Education: React.FC = () => {
 
   const educationData = [
     {
-      degree: 'Bachelor of Technology',
-      institution: 'RGUKT Srikakulam',
-      period: 'Aug 2023 - July 2027',
+      degree: 'B.Tech in Electronics & Communication Engineering (ECE)',
+      institution: 'RGUKT-IIIT Srikakulam, Srikakulam',
+      period: '2023 - 2027',
       icon: GraduationCap,
-      description: 'Pursuing B.Tech with focus on advanced engineering concepts and practical applications.'
+      description: 'Pursuing B.Tech with 7.8 CGPA. Focus on advanced engineering concepts, IoT, and embedded systems.'
     },
     {
-      degree: 'Pre University Course',
-      institution: 'RGUKT Srikakulam',
-      period: 'Dec 2022 - Aug 2023',
-      icon: Book,
-      description: 'Foundation course in science and mathematics.'
-    },
-    {
-      degree: "NxtWave's CCBP 4.0 Academy",
-      institution: 'Online',
-      period: 'Aug 2023 - Aug 2027',
+      degree: 'Industry Ready Certification in Full-Stack Development',
+      institution: 'NxtWave Disruptive Technologies',
+      period: 'Aug 2023 - Present',
       icon: Award,
-      description: 'Comprehensive full-stack development program.'
+      description: 'Comprehensive full-stack development program covering MERN stack, REST APIs, and modern web technologies.'
     },
     {
-      degree: '10th Grade',
-      institution: 'Zphs Gundugolanu',
-      period: 'Oct 2020 - May 2021',
+      degree: 'Intermediate (MBiPC)',
+      institution: 'RGUKT-IIIT Srikakulam, Srikakulam',
+      period: '2021 - 2023',
       icon: Book,
-      description: 'Secondary school education with distinction.'
+      description: 'Pre-university course in science and mathematics. 9.12 CGPA.'
+    },
+    {
+      degree: 'Secondary School Certificate',
+      institution: 'ZPHS Gundugolanu, Eluru',
+      period: '2020 - 2021',
+      icon: Book,
+      description: 'Secondary school education with 97.17% distinction.'
     }
   ];
 

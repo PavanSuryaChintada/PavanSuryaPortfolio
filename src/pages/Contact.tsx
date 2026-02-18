@@ -19,21 +19,20 @@ const Contact: React.FC = () => {
               <div className="flex items-start gap-5">
                 <img
                   src={profileImage}
-                  alt="Sumanth Samala"
+                  alt="Pavan Surya Chintada"
                   className="h-20 w-20 rounded-full border border-[#282828] object-cover shadow-[0_0_12px_rgba(30,215,96,0.18)]"
                 />
                 <div className="space-y-3">
                   <div className="space-y-[2px]">
-                    <h1 className="text-[1.9rem] font-semibold leading-tight text-white">Sumanth Samala</h1>
-                    <p className="text-base font-medium text-[#d5d5d5]">Senior Software Engineer</p>
+                    <h1 className="text-[1.9rem] font-semibold leading-tight text-white">Pavan Surya Chintada</h1>
+                    <p className="text-base font-medium text-[#d5d5d5]">Full-Stack Developer & AI Solutions Intern</p>
                   </div>
                   <p className="max-w-sm text-sm leading-relaxed text-[#bcbcbc]">
-                    With 5+ years in full-stack development, skilled in Ruby on Rails, Java Spring Boot, React, Node, AWS,
-                    Kubernetes, and Docker.
+                    EC undergrad learning MERN full-stack at NxtWave. Skilled in React, Node.js, Express, Python, SQL, and AI workflow automation. National-level declamation participant.
                   </p>
-                  <p className="text-sm text-[#a3a3a3]">Kajima Community | Swansea University</p>
+                  <p className="text-sm text-[#a3a3a3]">RGUKT-IIIT Srikakulam | NxtWave CCBP</p>
                   <a
-                    href="https://www.linkedin.com/in/sumanthsamala"
+                    href="https://www.linkedin.com/in/pavan-surya-chintada"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex w-fit items-center gap-3 rounded-lg bg-[#18a64b] px-6 py-2.5 text-sm font-semibold text-white shadow-[0_6px_18px_rgba(24,166,75,0.22)] transition-transform duration-150 hover:-translate-y-[1px] hover:bg-[#159344]"
@@ -58,26 +57,26 @@ const Contact: React.FC = () => {
             <div className="relative w-full max-w-[320px]">
               <div className="pointer-events-none absolute inset-0 rounded-full bg-[linear-gradient(120deg,rgba(29,185,84,0.5)_0%,rgba(29,185,84,0.12)_70%,transparent_100%)] opacity-70 blur" />
               <a
-                href="mailto:chintusamala96@gmail.com"
+                href="mailto:pavansuryachintada@gmail.com"
                 className="relative flex w-full items-center gap-3 rounded-full border border-[#2a2a2a] bg-[#191919] px-5 py-3 text-sm font-medium text-[#7ef5a6] transition duration-200 hover:bg-[#202020]"
               >
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#153a25] text-[#7ef5a6]">
                   <Mail className="h-3.5 w-3.5" />
                 </span>
-                <span className="flex-1 text-left tracking-wide">chintusamala96@gmail.com</span>
+                <span className="flex-1 text-left tracking-wide">pavansuryachintada@gmail.com</span>
               </a>
             </div>
 
             <div className="relative w-full max-w-[320px]">
               <div className="pointer-events-none absolute inset-0 rounded-full bg-[linear-gradient(120deg,rgba(29,185,84,0.5)_0%,rgba(29,185,84,0.12)_70%,transparent_100%)] opacity-70 blur" />
               <a
-                href="tel:+447442796769"
+                href="tel:+919014404898"
                 className="relative flex w-full items-center gap-3 rounded-full border border-[#2a2a2a] bg-[#191919] px-5 py-3 text-sm font-medium text-[#7ef5a6] transition duration-200 hover:bg-[#202020]"
               >
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#153a25] text-[#7ef5a6]">
                   <Phone className="h-3.5 w-3.5" />
                 </span>
-                <span className="flex-1 text-left tracking-wide">+44 7442 796769</span>
+                <span className="flex-1 text-left tracking-wide">+91 90144 04898</span>
               </a>
             </div>
           </div>

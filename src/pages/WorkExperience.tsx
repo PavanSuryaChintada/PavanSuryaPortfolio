@@ -10,31 +10,31 @@ const WorkExperience: React.FC = () => {
   const experiences = [
     {
       title: 'Web Developer / AI Solutions Intern',
-      company: 'ScoMedia',
-      period: 'Aug 2025 - Present',
+      company: 'Scomedia (Yashray Foundation)',
+      period: 'Aug 2025 - Jan 2026',
       icon: Code,
-      description: 'Developing AI-powered web solutions and implementing modern web technologies.'
+      description: 'Design and maintain web platforms, support AI-driven workflow automation, and collaborate with remote teams in a flexible work environment.'
     },
     {
       title: 'Growth Intern / Zonal Head',
       company: 'Student Tribe',
       period: 'July 2025 - Present',
       icon: Users,
-      description: 'Leading regional growth initiatives and managing student engagement programs.'
+      description: 'Advancing mission to empower students through curated opportunities, practical industry exposure, and collaborative growth. Bridge academic learning and real-world applications.'
     },
     {
       title: 'Web Developer',
-      company: 'MOONS',
-      period: 'June 2024 - Aug 2025',
+      company: 'Moons - The Creative Minds',
+      period: 'June 2024 - June 2025',
       icon: Code,
-      description: 'Built responsive web applications and maintained existing codebases.'
+      description: 'Designed and developed official startup website, delivering multiple client projects across India within two weeks. Applied technical expertise for efficient, timely, high-quality execution.'
     },
     {
       title: 'Research And Development Intern',
-      company: 'RGUKT',
+      company: 'Rajiv Gandhi University of Knowledge Technologies, Srikakulam',
       period: 'Dec 2024 - Feb 2025',
       icon: BookOpen,
-      description: 'Conducted research on emerging technologies and developed proof-of-concept projects.'
+      description: 'Contributed to design and development of star-shaped cross-defected ground circular ring metamaterial microstrip patch antenna. Gained hands-on experience with HFSS software and research paper publishing.'
     },
   ];
 

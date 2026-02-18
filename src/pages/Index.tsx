@@ -9,6 +9,8 @@ import Professional from './Professional';
 import Skills from './Skills';
 import Hire from './Hire';
 import WorkPermit from './WorkPermit';
+import Projects from './Projects';
+import Contact from './Contact';
 import DesktopLayout from '@/layouts/DesktopLayout';
 import MobileLayout from '@/layouts/MobileLayout';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -55,7 +57,10 @@ const Index = () => {
       content = <WorkPermit />;
       break;
     case '/contact':
-      content = <WorkPermit />;
+      content = <Contact />;
+      break;
+    case '/projects':
+      content = <Projects />;
       break;
     case '/profile':
       content = <Home />; // Placeholder, can create Profile page later

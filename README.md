@@ -102,9 +102,11 @@ Your feedback is valuable and helps make this project better for everyone. Thank
 
 ## 📧 Contact Me
 
-- 💼 Portfolio Website: 
+- 💼 Portfolio Website: [PavanSuryaPortfolio](https://github.com/PavanSuryaChintada/PavanSuryaPortfolio)
 - 📧 Email: `pavansuryachintada@gmail.com`
-- 🔗 LinkedIn: `https://linkedin.com/in/pavansuryachintada`
+- 📱 Phone: +91 90144 04898
+- 🔗 LinkedIn: [pavan-surya-chintada](https://www.linkedin.com/in/pavan-surya-chintada)
+- 🐙 GitHub: [PavanSuryaChintada](https://github.com/PavanSuryaChintada)
 
 ## 📜 License
 

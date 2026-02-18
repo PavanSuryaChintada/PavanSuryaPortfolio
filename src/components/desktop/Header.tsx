@@ -62,13 +62,13 @@ const Header: React.FC = () => {
           onScroll={updateShadows}
           className="flex items-center gap-2 sm:gap-4 overflow-x-auto scrollbar-hide whitespace-nowrap justify-end sm:justify-end px-2 scroll-smooth"
         >
-          <button className="flex items-center gap-2 whitespace-nowrap px-3 sm:px-6 py-2 bg-text-base text-bg-base text-xs sm:text-sm font-semibold rounded-full hover:scale-105 transition-smooth">
+          <a href="https://github.com/PavanSuryaChintada" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 whitespace-nowrap px-3 sm:px-6 py-2 bg-text-base text-bg-base text-xs sm:text-sm font-semibold rounded-full hover:scale-105 transition-smooth">
             <ArrowDownCircle className="h-4 w-4" />
-            Resume
-          </button>
-          <button className="whitespace-nowrap px-3 sm:px-6 py-2 border border-text-base text-text-base text-xs sm:text-sm font-semibold rounded-full hover:scale-105 transition-smooth">
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/pavan-surya-chintada" target="_blank" rel="noopener noreferrer" className="whitespace-nowrap px-3 sm:px-6 py-2 border border-text-base text-text-base text-xs sm:text-sm font-semibold rounded-full hover:scale-105 transition-smooth">
             LinkedIn
-          </button>
+          </a>
           <div className="hidden sm:flex w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden bg-bg-highlight items-center justify-center hover:scale-105 transition-smooth">
             {getProfileIcon()}
           </div>

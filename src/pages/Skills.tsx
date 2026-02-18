@@ -54,13 +54,15 @@ const Skills: React.FC = () => {
   };
 
   const skillsData: SkillData[] = [
-    { id: 1, icon: <Code2 className="w-8 h-8 text-blue-400" />, skill: 'Python', subtitle: 'Anirudh Raviguage', category: 'Backend', experience: '1 Year', progress: 20 },
-    { id: 2, icon: <Atom className="w-8 h-8 text-cyan-400" />, skill: 'React', subtitle: 'Anirudh Ravichan...', category: 'Backend', experience: '2 Years', progress: 40 },
-    { id: 3, icon: <Cog className="w-8 h-8 text-cyan-400" />, skill: 'React', subtitle: 'Programming Language', category: 'Backend', experience: '2 Years', progress: 40 },
-    { id: 4, icon: <Atom className="w-8 h-8 text-cyan-400" />, skill: 'React', subtitle: 'Anirudh Framework', category: 'Frontend', experience: '2 Years', progress: 40 },
-    { id: 5, icon: <Cloud className="w-8 h-8 text-orange-400" />, skill: 'AWS', subtitle: 'Thaman S, Silamb...', category: 'Expert', experience: '2+ Years', progress: 50 },
-    { id: 6, icon: <Container className="w-8 h-8 text-blue-500" />, skill: 'Docker', subtitle: 'Anirudh Ravichan...', category: 'Advrend', experience: '8 Years', progress: 100 },
-    { id: 7, icon: <Container className="w-8 h-8 text-green-500" />, skill: 'EyOps', subtitle: 'Dagrend', category: 'Devops', experience: '7 Years', progress: 90 },
+    { id: 1, icon: <Code2 className="w-8 h-8 text-blue-400" />, skill: 'React.js', subtitle: 'Frontend Framework', category: 'Frontend', experience: '2 Years', progress: 75 },
+    { id: 2, icon: <Atom className="w-8 h-8 text-cyan-400" />, skill: 'Node.js', subtitle: 'Backend Runtime', category: 'Backend', experience: '2 Years', progress: 75 },
+    { id: 3, icon: <Cog className="w-8 h-8 text-cyan-400" />, skill: 'Express.js', subtitle: 'REST APIs, Web Hooks', category: 'Backend', experience: '2 Years', progress: 70 },
+    { id: 4, icon: <Code2 className="w-8 h-8 text-yellow-400" />, skill: 'Python', subtitle: 'Backend & Scripting', category: 'Backend', experience: '2 Years', progress: 65 },
+    { id: 5, icon: <Cloud className="w-8 h-8 text-orange-400" />, skill: 'n8n & MCP', subtitle: 'Workflow Automation', category: 'Automation', experience: '1 Year', progress: 70 },
+    { id: 6, icon: <Container className="w-8 h-8 text-blue-500" />, skill: 'MongoDB', subtitle: 'NoSQL Database', category: 'Databases', experience: '2 Years', progress: 65 },
+    { id: 7, icon: <Container className="w-8 h-8 text-green-500" />, skill: 'PostgreSQL', subtitle: 'SQL RDBMS', category: 'Databases', experience: '2 Years', progress: 65 },
+    { id: 8, icon: <Code2 className="w-8 h-8 text-emerald-400" />, skill: 'HTML, CSS, Tailwind', subtitle: 'Frontend Styling', category: 'Frontend', experience: '2+ Years', progress: 80 },
+    { id: 9, icon: <Cog className="w-8 h-8 text-purple-400" />, skill: 'Git & GitHub', subtitle: 'Version Control', category: 'Other', experience: '2 Years', progress: 75 },
   ];
 
   const handleSort = (key: SortKey) => {
@@ -119,7 +121,7 @@ const Skills: React.FC = () => {
                   <span className="text-sm font-medium text-[#1DB954] tracking-wider">MY SKILLS</span>
                 </div>
                 <p className="text-white/70 text-sm mt-2 max-w-2xl leading-relaxed">
-                  A collection of my technical skills and expertise across various technologies and frameworks that I've mastered over the years.
+                  Frontend: HTML, CSS, Bootstrap, Tailwind, JavaScript, React.js. Backend: Python, Express, Node.js, REST APIs, Socket.IO. Databases: SQLite, PostgreSQL, MongoDB. Automation: n8n, MCP, Make.com, Agentic AI.
                 </p>
               </div>
             </div>

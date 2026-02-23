@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Header from '@/components/desktop/Header';
+import type { LucideIcon } from 'lucide-react';
 import { Briefcase, Users, Code, Award, Megaphone, BookOpen, Trophy } from 'lucide-react';
 
 interface TimelineEvent {
@@ -8,7 +9,7 @@ interface TimelineEvent {
   organization: string;
   dateRange: string;
   category: 'all' | 'college-work';
-  icon: any;
+  icon: LucideIcon;
 }
 
 const Professional: React.FC = () => {

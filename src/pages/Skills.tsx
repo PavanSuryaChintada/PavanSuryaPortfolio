@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import Header from '@/components/desktop/Header';
 import { Play, Clock, Code2, Atom, Cloud, Container, Cog, ChevronUp, ChevronDown, ArrowLeft, Check, ListMusic, LayoutGrid } from 'lucide-react';
 import ActionBar from '@/components/ActionBar';
@@ -35,10 +35,22 @@ const Skills: React.FC = () => {
   const [displayedSkills, setDisplayedSkills] = useState<SkillData[]>([]);
   const [isShuffled, setIsShuffled] = useState(false);
 
+  const skillsData = useMemo<SkillData[]>(() => [
+    { id: 1, icon: <Code2 className="w-8 h-8 text-blue-400" />, skill: 'React.js', subtitle: 'Frontend Framework', category: 'Frontend', experience: '2 Years', progress: 75 },
+    { id: 2, icon: <Atom className="w-8 h-8 text-cyan-400" />, skill: 'Node.js', subtitle: 'Backend Runtime', category: 'Backend', experience: '2 Years', progress: 75 },
+    { id: 3, icon: <Cog className="w-8 h-8 text-cyan-400" />, skill: 'Express.js', subtitle: 'REST APIs, Web Hooks', category: 'Backend', experience: '2 Years', progress: 70 },
+    { id: 4, icon: <Code2 className="w-8 h-8 text-yellow-400" />, skill: 'Python', subtitle: 'Backend & Scripting', category: 'Backend', experience: '2 Years', progress: 65 },
+    { id: 5, icon: <Cloud className="w-8 h-8 text-orange-400" />, skill: 'n8n & MCP', subtitle: 'Workflow Automation', category: 'Automation', experience: '1 Year', progress: 70 },
+    { id: 6, icon: <Container className="w-8 h-8 text-blue-500" />, skill: 'MongoDB', subtitle: 'NoSQL Database', category: 'Databases', experience: '2 Years', progress: 65 },
+    { id: 7, icon: <Container className="w-8 h-8 text-green-500" />, skill: 'PostgreSQL', subtitle: 'SQL RDBMS', category: 'Databases', experience: '2 Years', progress: 65 },
+    { id: 8, icon: <Code2 className="w-8 h-8 text-emerald-400" />, skill: 'HTML, CSS, Tailwind', subtitle: 'Frontend Styling', category: 'Frontend', experience: '2+ Years', progress: 80 },
+    { id: 9, icon: <Cog className="w-8 h-8 text-purple-400" />, skill: 'Git & GitHub', subtitle: 'Version Control', category: 'Other', experience: '2 Years', progress: 75 },
+  ], []);
+
   // Initialize displayedSkills with skillsData
   React.useEffect(() => {
     setDisplayedSkills([...skillsData]);
-  }, []);
+  }, [skillsData]);
 
   const handleShuffleToggle = () => {
     if (isShuffled) {
@@ -52,18 +64,6 @@ const Skills: React.FC = () => {
       setIsShuffled(true);
     }
   };
-
-  const skillsData: SkillData[] = [
-    { id: 1, icon: <Code2 className="w-8 h-8 text-blue-400" />, skill: 'React.js', subtitle: 'Frontend Framework', category: 'Frontend', experience: '2 Years', progress: 75 },
-    { id: 2, icon: <Atom className="w-8 h-8 text-cyan-400" />, skill: 'Node.js', subtitle: 'Backend Runtime', category: 'Backend', experience: '2 Years', progress: 75 },
-    { id: 3, icon: <Cog className="w-8 h-8 text-cyan-400" />, skill: 'Express.js', subtitle: 'REST APIs, Web Hooks', category: 'Backend', experience: '2 Years', progress: 70 },
-    { id: 4, icon: <Code2 className="w-8 h-8 text-yellow-400" />, skill: 'Python', subtitle: 'Backend & Scripting', category: 'Backend', experience: '2 Years', progress: 65 },
-    { id: 5, icon: <Cloud className="w-8 h-8 text-orange-400" />, skill: 'n8n & MCP', subtitle: 'Workflow Automation', category: 'Automation', experience: '1 Year', progress: 70 },
-    { id: 6, icon: <Container className="w-8 h-8 text-blue-500" />, skill: 'MongoDB', subtitle: 'NoSQL Database', category: 'Databases', experience: '2 Years', progress: 65 },
-    { id: 7, icon: <Container className="w-8 h-8 text-green-500" />, skill: 'PostgreSQL', subtitle: 'SQL RDBMS', category: 'Databases', experience: '2 Years', progress: 65 },
-    { id: 8, icon: <Code2 className="w-8 h-8 text-emerald-400" />, skill: 'HTML, CSS, Tailwind', subtitle: 'Frontend Styling', category: 'Frontend', experience: '2+ Years', progress: 80 },
-    { id: 9, icon: <Cog className="w-8 h-8 text-purple-400" />, skill: 'Git & GitHub', subtitle: 'Version Control', category: 'Other', experience: '2 Years', progress: 75 },
-  ];
 
   const handleSort = (key: SortKey) => {
     if (sortKey === key) {

@@ -1,10 +1,6 @@
-# Cloudflare Pages + Workers configuration
+# Cloudflare Pages configuration (Pages does not support [assets] - that is for Workers only)
 name = "pavansuryachintada"
 compatibility_date = "2025-02-01"
 
-# Required: Cloudflare Pages uses this as build output directory (must be dist)
+# Build output directory - must be dist for Vite
 pages_build_output_dir = "./dist"
-
-[assets]
-directory = "./dist"
-not_found_handling = "single-page-application"

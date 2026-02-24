@@ -1,6 +1,9 @@
-# Cloudflare Workers static assets configuration
-name = "pavan-surya-portfolio"
+# Cloudflare Pages + Workers configuration
+name = "pavansuryachintada"
 compatibility_date = "2025-02-01"
+
+# Required: Cloudflare Pages uses this as build output directory (must be dist)
+pages_build_output_dir = "./dist"
 
 [assets]
 directory = "./dist"

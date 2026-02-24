@@ -4,6 +4,11 @@
   <img alt="Choose Your Experience" src="assets/readme/choose-your-experience.png" width="720" />
 </p>
 
+## 🌐 Live site
+
+- **Main:** [**https://pavansuryachintada.pages.dev/**](https://pavansuryachintada.pages.dev/) *(Cloudflare Pages)*
+- Also on Vercel (secondary)
+
 Welcome to my personal portfolio project! 🚀
 This is a fast, modern portfolio site showcasing my work, skills, and experiences, all built from scratch with a Spotify-inspired theme. It's designed to be fast, responsive, and showcase my development expertise.
 
@@ -75,6 +80,7 @@ This project comes with several pre-configured scripts:
 
 Any static host works, as the app builds to a standard `dist/` directory.
 
+- **Cloudflare Pages** *(main)*: Connect repo → Build: `npm run build` → Build output directory: `dist` — [Live](https://pavansuryachintada.pages.dev/)
 - **Vercel**: Import your repo → Framework Preset: Vite → Build: `npm run build` → Output: `dist`
 - **Netlify**: Build command `npm run build` → Publish directory `dist`
 - **GitHub Pages**: Configure an action to serve the `dist/` output
@@ -102,12 +108,8 @@ Your feedback is valuable and helps make this project better for everyone. Thank
 
 ## 📧 Contact Me
 
-- 💼 Portfolio Website: [PavanSuryaPortfolio](https://github.com/PavanSuryaChintada/PavanSuryaPortfolio)
+- 💼 Portfolio: [pavansuryachintada.pages.dev](https://pavansuryachintada.pages.dev/) · [GitHub repo](https://github.com/PavanSuryaChintada/PavanSuryaPortfolio)
 - 📧 Email: `pavansuryachintada@gmail.com`
 - 📱 Phone: +91 90144 04898
 - 🔗 LinkedIn: [pavan-surya-chintada](https://www.linkedin.com/in/pavan-surya-chintada)
 - 🐙 GitHub: [PavanSuryaChintada](https://github.com/PavanSuryaChintada)
-
-## 📜 License
-
-This project is licensed under the **MIT License**. Feel free to use it, modify it, and share it!

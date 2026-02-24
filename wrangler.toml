@@ -1,5 +1,5 @@
 # Cloudflare Workers static assets configuration
-name = "pavan-surya-portfolio"
+name = "pavansuryachintada"
 compatibility_date = "2025-02-01"
 
 [assets]

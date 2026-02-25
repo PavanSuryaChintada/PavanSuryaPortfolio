@@ -2,37 +2,31 @@ import React from 'react';
 
 /**
  * Skeleton placeholder for ProfileSelector component
- * Matches the "Choose Your Experience" section layout
- * - Main heading placeholder
- * - 4 experience card placeholders (Recruiter, Stalker, Developer, Adventurer)
- * - Each card has circular icon and text label placeholders
+ * Matches the Spotify-style "Welcome back" / experience selector layout
+ * - Logo placeholder, "Welcome back" heading placeholder
+ * - 4 horizontal pill-button placeholders stacked vertically
  */
 const SkeletonExperienceSelector: React.FC = () => {
   return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-bg-base">
-      {/* Heading Placeholder */}
-      <div 
-        className="bg-[#282828] rounded-lg mb-[5vh] skeleton-shimmer"
-        style={{ 
-          width: 'clamp(300px, 50vw, 600px)', 
-          height: 'clamp(40px, 3.5vw, 64px)' 
-        }}
-      />
-      
-      {/* Experience Cards Grid */}
-      <div className="flex gap-[2vw] justify-center px-4 max-w-6xl">
-        {[...Array(4)].map((_, index) => (
-          <div
-            key={index}
-            className="relative flex flex-col items-center justify-center bg-[#282828] rounded-lg p-6 aspect-[3/4] max-w-[200px] w-full ring-1 ring-border-subtle skeleton-shimmer"
-          >
-            {/* Icon Placeholder - Circular */}
-            <div className="w-16 h-16 rounded-full bg-[#1a1a1a] mb-4" />
-            
-            {/* Text Label Placeholder */}
-            <div className="w-3/4 h-5 bg-[#1a1a1a] rounded" />
-          </div>
-        ))}
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#121212]">
+      <div className="flex flex-col items-center w-full max-w-[360px] px-6">
+        {/* Logo placeholder */}
+        <div className="w-10 h-10 rounded-full bg-[#282828] mb-8 skeleton-shimmer" />
+        {/* "Welcome back" heading placeholder */}
+        <div
+          className="bg-[#282828] rounded-lg mb-10 skeleton-shimmer"
+          style={{ width: 200, height: 36 }}
+        />
+
+        {/* Stack of pill button placeholders */}
+        <div className="flex flex-col items-center gap-3 w-full">
+          {[...Array(4)].map((_, index) => (
+            <div
+              key={index}
+              className="w-full max-w-[360px] h-12 rounded-full bg-[#282828] border border-[#535353] skeleton-shimmer"
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

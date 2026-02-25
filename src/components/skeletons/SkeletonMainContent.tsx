@@ -9,19 +9,7 @@ const SkeletonMainContent: React.FC = () => {
   return (
     <div className="flex h-full flex-col min-h-0 bg-gradient-to-b from-[#303030] to-[#121212]">
       <div className="flex-1 overflow-y-auto">
-        {/* Header skeleton */}
-        <header className="flex items-center justify-between px-6 py-4">
-          <div className="flex gap-4">
-            <div className="w-8 h-8 bg-[#282828] rounded-full skeleton-shimmer" />
-            <div className="w-8 h-8 bg-[#282828] rounded-full skeleton-shimmer" />
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="h-8 w-32 bg-[#282828] rounded-full skeleton-shimmer" />
-            <div className="w-8 h-8 bg-[#282828] rounded-full skeleton-shimmer" />
-          </div>
-        </header>
-
-        {/* Main Content */}
+        {/* Main Content - header is in layout */}
         <div className="px-6 pb-8 pt-6">
           {/* Filter Pills skeleton */}
           <div className="flex items-center gap-2 mb-6">

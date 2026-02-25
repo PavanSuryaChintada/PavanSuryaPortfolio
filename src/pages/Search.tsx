@@ -1,10 +1,8 @@
 import React from 'react';
-import Header from '@/components/desktop/Header';
 
 const Search = () => {
   return (
     <div className="bg-gradient-content min-h-screen">
-      <Header />
       <div className="px-6 py-6">
         <h1 className="text-text-base font-bold text-4xl mb-8">Search</h1>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

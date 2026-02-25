@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '@/components/desktop/Header';
 import { Mail, Smartphone, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,7 +7,6 @@ const WorkPermit: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#121212] to-[#1a1a1a]">
-      <Header />
       <main className="mx-auto min-h-[calc(100vh-5rem)] w-full max-w-5xl px-6 py-8">
         <div className="w-full">
           {/* Back Button */}

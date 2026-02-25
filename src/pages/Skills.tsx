@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from 'react';
-import Header from '@/components/desktop/Header';
 import { Play, Clock, Code2, Atom, Cloud, Container, Cog, ChevronUp, ChevronDown, ArrowLeft, Check, ListMusic, LayoutGrid } from 'lucide-react';
 import ActionBar from '@/components/ActionBar';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -98,7 +97,6 @@ const Skills: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#1f1f1f] to-[#121212]">
-      <Header />
       <div className="relative z-10 px-8 py-6">
         {/* Expertise Header with two columns */}
         <div className="w-full max-w-7xl mx-auto">

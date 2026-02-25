@@ -6,7 +6,7 @@ import React from 'react';
  */
 const SkeletonRightSidebar: React.FC = () => {
   return (
-    <aside className="w-[320px] h-[calc(100vh-90px)] bg-bg-elevated overflow-y-auto fixed right-0 top-0 p-4 lg:hidden xl:block">
+    <aside className="w-full h-full min-h-0 bg-transparent overflow-y-auto relative p-4 lg:hidden xl:block">
       {/* User Profile Avatar skeleton */}
       <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#282828] skeleton-shimmer z-10" />
 

@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import Header from '@/components/desktop/Header';
 import type { LucideIcon } from 'lucide-react';
 import { Briefcase, Users, Code, Award, Megaphone, BookOpen, Trophy } from 'lucide-react';
 
@@ -86,8 +85,6 @@ const Professional: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-bg-base">
-      <Header />
-      
       <div className="px-6 pb-8 pt-6">
         {/* Filter Pills */}
         <div className="flex gap-2 mb-8 ml-4">

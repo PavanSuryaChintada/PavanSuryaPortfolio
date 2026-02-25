@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '@/components/desktop/Header';
-
 const Library = () => {
   return (
     <div className="bg-gradient-content min-h-screen">
-      <Header />
       <div className="px-6 py-6">
         <h1 className="text-text-base font-bold text-4xl mb-8">Your Library</h1>
         <div className="space-y-4">

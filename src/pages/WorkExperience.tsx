@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '@/components/desktop/Header';
 import { Briefcase, Code, Users, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
@@ -40,8 +39,6 @@ const WorkExperience: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-bg-base">
-      <Header />
-      
       <div className="px-6 pb-8 pt-6">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center justify-between mb-8">

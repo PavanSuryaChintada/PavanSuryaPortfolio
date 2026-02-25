@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '@/components/desktop/Header';
 import { ExternalLink, Code, Shield, Zap } from 'lucide-react';
 import BackButton from '@/components/ui/BackButton';
 
@@ -51,8 +50,6 @@ const Projects: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-bg-base">
-      <Header />
-      
       <div className="px-6 pb-8 pt-6">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center justify-between mb-8">

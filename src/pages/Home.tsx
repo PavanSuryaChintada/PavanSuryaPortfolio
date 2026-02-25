@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useAppContext } from '@/contexts/AppContext';
 import { useNavigate } from 'react-router-dom';
 import ContentCard from '@/components/desktop/ContentCard';
-import Header from '@/components/desktop/Header';
 import FilterPills from '@/components/desktop/FilterPills';
 import { ChevronLeft, ChevronRight, ArrowLeft } from 'lucide-react';
 import { useColorExtractor } from '@/hooks/use-color-extractor';
@@ -75,8 +74,6 @@ const Home: React.FC = () => {
       }}
     >
       <div className="flex-1 overflow-y-auto">
-        <Header />
-
         {/* Main Content */}
         <div className="px-6 pb-8 pt-6">
           <AnimatePresence mode="wait">

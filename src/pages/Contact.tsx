@@ -1,12 +1,10 @@
 import React from 'react';
-import Header from '@/components/desktop/Header';
 import profileImage from '@/assets/avatar.png';
 import { Linkedin, Mail, Phone, Coffee } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0f0f0f] via-[#050505] to-[#020202]">
-      <Header />
       <main className="mx-auto flex min-h-[calc(100vh-5rem)] w-full max-w-5xl flex-col items-center gap-16 px-6 pb-20 pt-14">
         <section className="relative w-full max-w-[420px]">
           <div className="absolute inset-0 rounded-[0.95rem] bg-[radial-gradient(circle_at_top_left,rgba(38,219,110,0.24),transparent_55%),radial-gradient(circle_at_bottom_right,rgba(38,219,110,0.2),transparent_58%)] shadow-[0_0_22px_rgba(38,219,110,0.18)]" />

@@ -35,7 +35,7 @@ const RightSidebar: React.FC = () => {
   return (
     <aside 
       ref={sidebarRef} 
-      className="w-[320px] h-[calc(100vh-90px)] bg-bg-elevated overflow-y-auto fixed right-0 top-0 p-4 lg:hidden xl:block"
+      className="w-full h-full min-h-0 bg-transparent overflow-y-auto relative p-4 lg:hidden xl:block"
     >
       {/* User Profile Avatar */}
       <button className="absolute top-4 right-4 w-8 h-8 rounded-full bg-bg-highlight flex items-center justify-center text-text-base hover:scale-105 transition-smooth z-10">

@@ -23,7 +23,7 @@ const Sidebar: React.FC = () => {
   ];
 
   return (
-    <aside className="w-[260px] lg:w-[60px] xl:w-[260px] h-[calc(100vh-90px)] bg-bg-sidebar fixed left-0 top-0 p-6 lg:p-2 xl:p-6 overflow-y-auto">
+    <aside className="w-full h-full min-h-0 bg-transparent p-6 lg:p-2 xl:p-6 overflow-y-auto">
       <nav className="mb-8">
         <ul className="space-y-4">
           {navLinks.map((link) => {

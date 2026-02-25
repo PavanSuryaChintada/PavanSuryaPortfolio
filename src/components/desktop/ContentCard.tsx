@@ -17,7 +17,7 @@ const ContentCard: React.FC<ContentCardProps> = ({ title, subtitle, imageUrl, si
   const [hovered, setHovered] = useState(false);
   return (
     <div 
-      className="group relative bg-bg-card rounded-lg p-4 cursor-pointer"
+      className="group relative bg-[#181818] rounded-[6px] p-4 cursor-pointer"
       onMouseEnter={() => { 
         if (!disableHover) { 
           if (!suppressHoverBackground) setHovered(true);
@@ -37,7 +37,7 @@ const ContentCard: React.FC<ContentCardProps> = ({ title, subtitle, imageUrl, si
       }}
     >
       <div className="relative mb-4">
-        <div className={`${size === 'large' ? 'aspect-[4/3]' : 'aspect-square'} bg-bg-highlight rounded-md overflow-hidden`}>
+        <div className={`${size === 'large' ? 'aspect-[4/3]' : 'aspect-square'} bg-[#282828] rounded-[6px] overflow-hidden`}>
           {imageUrl ? (
             <img src={imageUrl} alt={title} className="w-full h-full object-cover" />
           ) : (
@@ -52,8 +52,8 @@ const ContentCard: React.FC<ContentCardProps> = ({ title, subtitle, imageUrl, si
           </button>
         )}
       </div>
-      <h3 className="text-text-base transition-smooth font-bold mb-1 truncate">{title}</h3>
-      <p className="text-text-subdued text-sm truncate">{subtitle}</p>
+      <h3 className="text-[#ffffff] transition-smooth font-bold mb-1 truncate text-sm">{title}</h3>
+      <p className="text-[#b3b3b3] text-xs truncate">{subtitle}</p>
     </div>
   );
 };

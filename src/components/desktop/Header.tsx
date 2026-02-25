@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import { useAppContext } from '@/contexts/AppContext';
 
-/** Spotify-style logo: three curved sound wave lines */
+/** Spotify-style logo (scale reduced ~20% for less boxy look) */
 const SpotifyStyleLogo: React.FC<{ className?: string }> = ({ className = 'w-8 h-8' }) => (
   <svg
     viewBox="0 0 24 24"
@@ -52,7 +52,7 @@ const Header: React.FC = () => {
 
   return (
     <header className="relative flex-shrink-0 flex items-center justify-between gap-4 h-14 px-4 sm:px-6 bg-[#000000] z-50">
-      {/* Left: Spotify-style logo */}
+      {/* Left: Logo (~20% smaller) */}
       <div className="flex items-center min-w-0 flex-shrink-0 z-10">
         <Link
           to="/"
@@ -63,9 +63,9 @@ const Header: React.FC = () => {
         </Link>
       </div>
 
-      {/* Center: Home button + pill search bar (absolutely centered in header) */}
-      <div className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 flex items-center justify-center gap-2 pointer-events-none w-full max-w-[600px] mx-auto">
-        <div className="flex items-center gap-2 pointer-events-auto">
+      {/* Center: Home + search (slightly smaller) */}
+      <div className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 flex items-center justify-center gap-2.5 pointer-events-none w-full max-w-[560px] mx-auto">
+        <div className="flex items-center gap-2.5 pointer-events-auto">
           <Link
             to="/"
             className="flex-shrink-0 w-10 h-10 rounded-full bg-[#121212] text-[#ffffff] flex items-center justify-center hover:bg-[#282828] transition-colors"
@@ -76,7 +76,7 @@ const Header: React.FC = () => {
           <button
             type="button"
             onClick={() => navigate('/search')}
-            className="flex items-center gap-3 h-10 pl-4 pr-3 py-2 rounded-full bg-[#242424] text-[#b3b3b3] hover:bg-[#2a2a2a] hover:text-[#ffffff] transition-colors text-left min-w-[280px]"
+            className="flex items-center gap-2.5 h-10 pl-4 pr-3 py-2 rounded-full bg-[#242424] text-[#b3b3b3] hover:bg-[#2a2a2a] hover:text-[#ffffff] transition-colors text-left min-w-[260px]"
           >
             <Search className="w-5 h-5 flex-shrink-0 text-current" />
             <span className="truncate text-sm font-medium">What do you want to play?</span>
@@ -85,20 +85,20 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Right: Install App, GitHub, LinkedIn, Bell, What's New, Profile */}
-      <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0 z-10">
+      {/* Right: 16px gap; icons ~20–24px; profile circle ~28–32px */}
+      <div className="flex items-center gap-4 flex-shrink-0 z-10">
         <a
           href="#"
-          className="flex items-center gap-2 whitespace-nowrap px-3 py-2 rounded-full bg-[#121212] text-[#ffffff] text-xs font-semibold hover:bg-[#282828] hover:scale-105 transition-all"
+          className="flex items-center gap-1.5 whitespace-nowrap px-2.5 py-1.5 rounded-full bg-[#121212] text-[#ffffff] text-sm font-medium hover:bg-[#282828] transition-all"
         >
-          <Download className="w-4 h-4" />
+          <Download className="w-5 h-5" />
           <span className="hidden sm:inline">Install App</span>
         </a>
         <a
           href="https://github.com/PavanSuryaChintada"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 whitespace-nowrap px-3 py-2 rounded-full border border-[#535353] text-[#ffffff] text-xs font-semibold hover:border-[#ffffff] hover:scale-105 transition-all"
+          className="flex items-center gap-1.5 whitespace-nowrap px-2.5 py-1.5 rounded-full border border-[#ffffff] text-[#ffffff] text-sm font-medium hover:bg-[#ffffff] hover:text-[#000000] transition-all"
         >
           GitHub
         </a>
@@ -106,20 +106,20 @@ const Header: React.FC = () => {
           href="https://www.linkedin.com/in/pavan-surya-chintada"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 whitespace-nowrap px-3 py-2 rounded-full border border-[#535353] text-[#ffffff] text-xs font-semibold hover:border-[#ffffff] hover:scale-105 transition-all"
+          className="flex items-center gap-1.5 whitespace-nowrap px-2.5 py-1.5 rounded-full border border-[#ffffff] text-[#ffffff] text-sm font-medium hover:bg-[#ffffff] hover:text-[#000000] transition-all"
         >
           LinkedIn
         </a>
         <button
           type="button"
-          className="w-8 h-8 flex items-center justify-center rounded-full text-[#ffffff] hover:bg-[#282828] transition-colors"
+          className="w-9 h-9 flex items-center justify-center rounded-full text-[#ffffff] hover:bg-[#282828] transition-colors"
           aria-label="Notifications"
         >
           <Bell className="w-5 h-5" />
         </button>
         <button
           type="button"
-          className="w-8 h-8 flex items-center justify-center rounded-full text-[#ffffff] hover:bg-[#282828] transition-colors"
+          className="w-9 h-9 flex items-center justify-center rounded-full text-[#ffffff] hover:bg-[#282828] transition-colors"
           aria-label="What's New"
         >
           <Users className="w-5 h-5" />

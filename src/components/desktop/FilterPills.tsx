@@ -16,8 +16,8 @@ const FilterPills: React.FC<FilterPillsProps> = ({ activeFilter, onFilterChange 
           onClick={() => onFilterChange(filter)}
           className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-smooth ${
             activeFilter === filter
-              ? 'bg-text-base text-bg-base'
-              : 'bg-bg-highlight text-text-base hover:bg-bg-card-hover'
+              ? 'bg-[#ffffff] text-[#000000]'
+              : 'bg-[#282828] text-[#ffffff] hover:bg-[#3e3e3e]'
           }`}
         >
           {filter}

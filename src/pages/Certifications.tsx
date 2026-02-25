@@ -96,7 +96,7 @@ const Certifications: React.FC = () => {
               return (
                 <div 
                   key={index}
-                  className="bg-bg-card rounded-lg p-6 border border-bg-highlight hover:border-spotify-green/50 transition-all group"
+                  className="bg-bg-card rounded-[6px] p-6 border border-bg-highlight hover:border-spotify-green/50 transition-all group"
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-full bg-spotify-green/10 flex items-center justify-center group-hover:bg-spotify-green/20 transition-colors">

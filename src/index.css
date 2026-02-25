@@ -62,28 +62,32 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
   body {
     @apply bg-background text-foreground;
     font-family: 'Circular Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     overflow-x: hidden;
   }
 
-  /* Custom Scrollbar Styling */
-  ::-webkit-scrollbar {
+  /* Custom Scrollbar Styling (exclude .spotify-scroll - see below) */
+  *:not(.spotify-scroll)::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
 
-  ::-webkit-scrollbar-track {
+  *:not(.spotify-scroll)::-webkit-scrollbar-track {
     background: hsl(var(--bg-sidebar));
   }
 
-  ::-webkit-scrollbar-thumb {
+  *:not(.spotify-scroll)::-webkit-scrollbar-thumb {
     background: hsl(var(--bg-card-hover));
     border-radius: 4px;
   }
 
-  ::-webkit-scrollbar-thumb:hover {
+  *:not(.spotify-scroll)::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--border-subtle));
   }
 
@@ -96,6 +100,32 @@ All colors MUST be HSL.
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+}
+
+/* Spotify-style scrollbar: main center content only. Transparent track; short square-like thumb; more visible on hover/scroll. */
+.spotify-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+}
+.spotify-scroll::-webkit-scrollbar {
+  width: 12px;
+}
+.spotify-scroll::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+.spotify-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+.spotify-scroll:hover::-webkit-scrollbar-thumb,
+.spotify-scroll.scrollbar-visible::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.spotify-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 @layer utilities {

@@ -1,8 +1,10 @@
+/* Full viewport so fixed footer can be edge-to-edge (no "box inside a box") */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  max-width: none;
+  margin: 0;
+  padding: 0;
 }
 
 .logo {

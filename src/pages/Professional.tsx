@@ -303,7 +303,7 @@ const Professional: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.5 }}
                     transition={{ duration: 0.9, ease: 'easeOut', delay: Math.min(index * 0.12, 1.2) }}
-                    className="bg-bg-card/80 backdrop-blur-sm border-2 border-spotify-green/50 rounded-2xl p-5 shadow-lg hover:border-spotify-green transition-all"
+                    className="bg-bg-card/80 backdrop-blur-sm border-2 border-spotify-green/50 rounded-[6px] p-5 shadow-lg hover:border-spotify-green transition-all"
                   >
                     <div className="flex items-start justify-between mb-2">
                       <div className="flex-1">

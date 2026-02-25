@@ -66,15 +66,15 @@ const Home: React.FC = () => {
 
   return (
     <div
-      className="flex h-full flex-col min-h-0 transition-all duration-500"
+      className="flex flex-col min-h-0 transition-all duration-500"
       style={{
         background: gradientColor
           ? `linear-gradient(180deg, hsl(${gradientColor}) 0%, hsl(var(--gradient-bottom)) 300px)`
           : 'linear-gradient(180deg, hsl(var(--gradient-top)) 0%, hsl(var(--gradient-bottom)) 300px)'
       }}
     >
-      <div className="flex-1 overflow-y-auto">
-        {/* Main Content */}
+      {/* No inner overflow: layout main scrolls so sticky "About Me" header can react */}
+      <div className="flex-1 min-h-0">
         <div className="px-6 pb-8 pt-6">
           <AnimatePresence mode="wait">
           {!showSeeAll && (

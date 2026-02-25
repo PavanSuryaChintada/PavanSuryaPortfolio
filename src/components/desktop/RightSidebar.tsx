@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { User, Check, Mail, Linkedin, Github, MessageCircle } from 'lucide-react';
+import { Check, Mail, Linkedin, Github, MessageCircle, PanelRight, MoreHorizontal, Maximize2 } from 'lucide-react';
 import { useAppContext } from '@/contexts/AppContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -8,6 +8,7 @@ const RightSidebar: React.FC = () => {
   const sidebarRef = useRef<HTMLElement>(null);
   const { setSidebarScrollProgress } = useAppContext();
   const [isTopCardHovered, setIsTopCardHovered] = useState(false);
+  const [isHoveringPanel, setIsHoveringPanel] = useState(false);
 
   useEffect(() => {
     const element = sidebarRef.current;
@@ -33,16 +34,34 @@ const RightSidebar: React.FC = () => {
   }, [setSidebarScrollProgress]);
 
   return (
-    <aside 
-      ref={sidebarRef} 
-      className="w-full h-full min-h-0 bg-transparent overflow-y-auto relative p-4 lg:hidden xl:block"
+    <aside
+      ref={sidebarRef}
+      className="w-full h-full min-h-0 bg-transparent overflow-y-auto relative lg:hidden xl:block"
+      onMouseEnter={() => setIsHoveringPanel(true)}
+      onMouseLeave={() => setIsHoveringPanel(false)}
     >
-      {/* User Profile Avatar */}
-      <button className="absolute top-4 right-4 w-8 h-8 rounded-full bg-bg-highlight flex items-center justify-center text-text-base hover:scale-105 transition-smooth z-10">
-        <User size={18} />
-      </button>
-
-      <div className="mt-8 space-y-4">
+      {/* Sticky header: About Me + icons (icons only visible when cursor is over this panel) */}
+      <div className="sticky top-0 z-10 flex items-center justify-between gap-2 px-4 pt-4 pb-2 rounded-t-[8px] bg-[#121212] min-w-0">
+        <div className="flex items-center gap-2 min-w-0">
+          <button type="button" className="flex-shrink-0 text-[#b3b3b3] hover:text-white transition-colors p-1" aria-label="Expand panel">
+            <PanelRight size={20} />
+          </button>
+          <h2 className="text-white text-2xl font-bold truncate">About Me</h2>
+        </div>
+        <div
+          className={`flex items-center gap-1 flex-shrink-0 transition-opacity duration-200 ${
+            isHoveringPanel ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
+        >
+          <button type="button" className="text-[#b3b3b3] hover:text-white transition-colors p-1" aria-label="More options">
+            <MoreHorizontal size={20} />
+          </button>
+          <button type="button" className="text-[#b3b3b3] hover:text-white transition-colors p-1" aria-label="Fullscreen">
+            <Maximize2 size={20} />
+          </button>
+        </div>
+      </div>
+      <div className="space-y-4 px-4 pb-4 pt-2">
         {/* Top Card - Artist Info / About the Artist (with hover state) */}
         <div 
           className="relative"
@@ -138,46 +157,38 @@ const RightSidebar: React.FC = () => {
           </Card>
         </div>
 
-        {/* Credits Card - Always Visible */}
-        <Card className="bg-bg-card border-border-subtle">
-          <CardContent className="p-4">
-            <h3 className="text-text-base font-bold text-sm mb-2">Credits</h3>
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-12 h-12 rounded-full bg-bg-elevated overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=48&h=48&fit=crop"
-                  alt="Artist"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <p className="text-text-base text-sm font-medium">Pavan Surya Chintada</p>
-                <p className="text-text-subdued text-xs">Full-Stack Developer</p>
-              </div>
-            </div>
-            <Button variant="outline" className="w-full">Follow</Button>
-          </CardContent>
-        </Card>
+        {/* Credits – Spotify-style sub-card */}
+        <div className="rounded-[6px] p-4 bg-[#242424]">
+          <h3 className="text-white font-bold text-sm mb-3">Credits</h3>
+          <ul className="space-y-2">
+            <li className="flex items-center justify-between gap-2">
+              <span className="text-[#b3b3b3] text-[11px]">Main Developer</span>
+              <span className="text-white text-[13px] font-medium truncate">Pavan Surya Chintada</span>
+            </li>
+            <li className="flex items-center justify-between gap-2">
+              <span className="text-[#b3b3b3] text-[11px]">Design</span>
+              <span className="text-white text-[13px] font-medium truncate">Pavan Surya Chintada</span>
+            </li>
+          </ul>
+        </div>
 
-        {/* Next in Queue Card - Always Visible */}
-        <Card className="bg-bg-card border-border-subtle">
-          <CardContent className="p-4">
-            <h3 className="text-text-base font-bold text-sm mb-3">Next in queue</h3>
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded bg-bg-elevated overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=48&h=48&fit=crop"
-                  alt="Next track"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <p className="text-text-base text-sm font-medium">Money Heist Theme</p>
-                <p className="text-text-subdued text-xs">El Profesor</p>
-              </div>
+        {/* Next in queue – Spotify-style sub-card */}
+        <div className="rounded-[6px] p-4 bg-[#242424]">
+          <h3 className="text-white font-bold text-sm mb-3">Next in queue</h3>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded bg-[#333333] overflow-hidden flex-shrink-0">
+              <img
+                src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=40&h=40&fit=crop"
+                alt="Next track"
+                className="w-full h-full object-cover"
+              />
             </div>
-          </CardContent>
-        </Card>
+            <div className="min-w-0">
+              <p className="text-white text-[13px] font-medium truncate">Money Heist Theme</p>
+              <p className="text-[#b3b3b3] text-[11px] truncate">El Profesor</p>
+            </div>
+          </div>
+        </div>
       </div>
     </aside>
   );

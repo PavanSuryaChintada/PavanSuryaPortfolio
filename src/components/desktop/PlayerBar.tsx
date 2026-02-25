@@ -23,7 +23,7 @@ const PlayerBar: React.FC = () => {
   const formattedTime = `${currentMinutes}:${remainingSeconds.toString().padStart(2, '0')}`;
   
   const iconSize = 16;
-  const utilityIconSize = 16;
+  const utilityIconSize = 18; /* Right section: consistent size for mic, queue, device, volume, fullscreen */
 
   return (
     <footer
@@ -126,8 +126,8 @@ const PlayerBar: React.FC = () => {
         </div>
       </div>
 
-      {/* RIGHT SECTION: Utility Controls */}
-      <div className="flex items-center justify-end gap-3 flex-1 min-w-0 pr-4">
+      {/* RIGHT SECTION: Utility Controls – consistent icon size, even spacing */}
+      <div className="flex items-center justify-end gap-4 flex-1 min-w-0 pr-4">
         <button
           onClick={() => setIsLyricsActive(!isLyricsActive)}
           className={`${isLyricsActive ? 'text-[#1db954]' : 'text-[#b3b3b3] hover:text-[#ffffff]'} transition-colors`}
@@ -149,7 +149,7 @@ const PlayerBar: React.FC = () => {
           <MonitorSpeaker size={utilityIconSize} />
         </button>
         
-        <div className="flex items-center gap-2 group/vol w-[125px]">
+        <div className="flex items-center gap-2 group/vol w-[140px] min-w-0">
           <Volume2 size={utilityIconSize} className="text-[#b3b3b3] group-hover/vol:text-[#ffffff]" />
           <div className="flex-1 h-1 bg-[#4d4d4d] rounded-full relative cursor-pointer">
             <div

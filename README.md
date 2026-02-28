@@ -5,6 +5,7 @@
 </p>
 
 ## 🌐 Live site
+pavansuryachintada.pages.dev
 
 - **Main:** [**https://pavansuryachintada.pages.dev/**](https://pavansuryachintada.pages.dev/) *(Cloudflare Pages)*
 - Also on Vercel (secondary)
